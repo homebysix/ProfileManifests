@@ -529,12 +529,12 @@ A profile can consist of payloads with different version numbers. For example, c
 					<key>pfm_target_conditions</key>
 					<array>
 						<dict>
-							<key>pfm_present</key>
-							<false/>
 							<key>pfm_n_range_list</key>
 							<array>
 								<string>filelog</string>
 							</array>
+							<key>pfm_present</key>
+							<false/>
 							<key>pfm_target</key>
 							<string>EventLogType</string>
 						</dict>

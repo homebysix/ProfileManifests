@@ -512,7 +512,6 @@
 			<key>pfm_type</key>
 			<string>string</string>
 		</dict>
-		<!-- START Cloud Reporting -->
 		<dict>
 			<key>pfm_app_min</key>
 			<string>72</string>
@@ -560,10 +559,10 @@ This policy is only effective when the machine is enrolled with CloudManagementE
 			<string>boolean</string>
 		</dict>
 		<dict>
-			<key>pfm_app_min</key>
-			<string>72</string>
 			<key>pfm_app_deprecated</key>
 			<string>84</string>
+			<key>pfm_app_min</key>
+			<string>72</string>
 			<key>pfm_description</key>
 			<string>Report Safe Browsing information.</string>
 			<key>pfm_description_reference</key>
@@ -583,7 +582,6 @@ This policy is only effective when the machine is enrolled with CloudManagementE
 			<key>pfm_type</key>
 			<string>boolean</string>
 		</dict>
-		<!-- END Cloud Report -->
 		<dict>
 			<key>pfm_app_min</key>
 			<string>10</string>
@@ -1562,73 +1560,6 @@ The protocol handlers registered by policy are merged with the ones registered b
 			<key>pfm_type</key>
 			<string>array</string>
 		</dict>
-		<!-- <dict>
-			<key>pfm_app_min</key>
-			<string>74</string>
-			<key>pfm_description</key>
-			<string>Allows you to set a list of urls that specify which sites will automatically be granted permission to access a USB device with the given vendor and product IDs.</string>
-			<key>pfm_description_reference</key>
-			<string>Allows you to set a list of urls that specify which sites will automatically be granted permission to access a USB device with the given vendor and product IDs. Each item in the list must contain both devices and urls in order for the policy to be valid. Each item in devices can contain a vendor ID and product ID field. Any ID that is omitted is treated as a wildcard with one exception, and that exception is that a product ID cannot be specified without a vendor ID also being specified. Otherwise, the policy will not be valid and will be ignored.
-
-The USB permission model uses the URL of the requesting site ("requesting URL") and the URL of the top-level frame site ("embedding URL") to grant permission to the requesting URL to access the USB device. The requesting URL may be different than the embedding URL when the requesting site is loaded in an iframe. Therefore, the "urls" field can contain up to two URL strings delimited by a comma to specify the requesting and embedding URL respectively. If only one URL is specified, then access to the corresponding USB devices will be granted when the requesting site's URL matches this URL regardless of embedding status. The URLs in "urls" must be valid URLs, otherwise the policy will be ignored.
-
-If this policy is left not set, the global default value will be used for all sites either from the 'DefaultWebUsbGuardSetting' policy if it is set, or the user's personal configuration otherwise.
-
-URL patterns in this policy should not clash with the ones configured via WebUsbBlockedForUrls. If there is a clash, this policy will take precedence over WebUsbBlockedForUrls and WebUsbAskForUrls.</string>
-			<key>pfm_documentation_url</key>
-			<string>https://cloud.google.com/docs/chrome-enterprise/policies/?policy=WebUsbAllowDevicesForUrls</string>
-			<key>pfm_name</key>
-			<string>WebUsbAllowDevicesForUrls</string>
-			<key>pfm_note</key>
-			<string>Each item in devices can contain a vendor ID and product ID field. Any ID that is omitted is treated as a wildcard with one exception, and that exception is that a product ID cannot be specified without a vendor ID also being specified. Otherwise, the policy will not be valid and will be ignored.</string>
-			<key>pfm_subkeys</key>
-			<array>
-				<dict>
-					<key>pfm_name</key>
-					<string>urls</string>
-					<key>pfm_subkeys</key>
-					<array>
-						<dict>
-							<key>pfm_format</key>
-							<string>https?://.*</string>
-							<key>pfm_type</key>
-							<string>string</string>
-						</dict>
-					</array>
-					<key>pfm_title</key>
-					<string>URLs</string>
-					<key>pfm_type</key>
-					<string>array</string>
-				</dict>
-				<dict>
-					<key>pfm_name</key>
-					<string>devices</string>
-					<key>pfm_subkeys</key>
-					<array>
-						<dict>
-							<key>pfm_name</key>
-							<string>product_id</string>
-							<key>pfm_type</key>
-							<string>integer</string>
-						</dict>
-						<dict>
-							<key>pfm_name</key>
-							<string>vendor_id</string>
-							<key>pfm_type</key>
-							<string>integer</string>
-						</dict>
-					</array>
-					<key>pfm_title</key>
-					<string>Devices</string>
-					<key>pfm_type</key>
-					<string>dictionary</string>
-				</dict>
-			</array>
-			<key>pfm_title</key>
-			<string>Automatically grant permission to these sites to connect to USB devices with the given vendor and product IDs</string>
-			<key>pfm_type</key>
-			<string>dictionary</string>
-		</dict> -->
 		<dict>
 			<key>pfm_app_min</key>
 			<string>66</string>
@@ -1725,7 +1656,6 @@ Note that if Google Chrome is running and this policy changes, it will be applie
 			<key>pfm_type</key>
 			<string>array</string>
 		</dict>
-		<!-- START ContentSettings/DefaultSearchProvider -->
 		<dict>
 			<key>pfm_app_min</key>
 			<string>24</string>
@@ -2033,8 +1963,6 @@ This policy is only respected if the 'DefaultSearchProviderEnabled' policy is en
 			<key>pfm_value_placeholder</key>
 			<string>q={searchTerms},ie=utf-8,oe=utf-8</string>
 		</dict>
-		<!-- END ContentSettings/DefaultSearchProvider -->
-		<!-- START ContentSettings/Extensions -->
 		<dict>
 			<key>pfm_app_min</key>
 			<string>25</string>
@@ -2322,10 +2250,10 @@ For a full description of possible settings and structure of this policy please 
 					<string></string>
 					<key>pfm_description_reference</key>
 					<string></string>
-					<key>pfm_name</key>
-					<string>{{value}}</string>
 					<key>pfm_hidden</key>
 					<string>container</string>
+					<key>pfm_name</key>
+					<string>{{value}}</string>
 					<key>pfm_subkeys</key>
 					<array>
 						<dict>
@@ -2584,12 +2512,12 @@ External extensions and their installation are documented at https://developer.c
 			<string>boolean</string>
 		</dict>
 		<dict>
-			<key>pfm_default</key>
-			<false/>
 			<key>pfm_app_deprecated</key>
 			<string>78</string>
 			<key>pfm_app_min</key>
 			<string>73</string>
+			<key>pfm_default</key>
+			<false/>
 			<key>pfm_description</key>
 			<string>Allow insecure algorithms in integrity checks on extension updates and installs.</string>
 			<key>pfm_description_reference</key>
@@ -2609,8 +2537,6 @@ Starting in Google Chrome 78, this policy will be ignored and treated as disable
 			<key>pfm_type</key>
 			<string>boolean</string>
 		</dict>
-		<!-- END ContentSettings/Extensions -->
-		<!-- START ContentSettings/GoogleCast -->
 		<dict>
 			<key>pfm_app_min</key>
 			<string>52</string>
@@ -2653,8 +2579,6 @@ If the policy "EnableMediaRouter" is set to false, then this policy's value woul
 			<key>pfm_type</key>
 			<string>boolean</string>
 		</dict>
-		<!-- END ContentSettings/GoogleCast -->
-		<!-- START ContentSettings/HTTPAuthentication -->
 		<dict>
 			<key>pfm_app_min</key>
 			<string>13</string>
@@ -2910,8 +2834,6 @@ If this policy is not set, the default is true and NTLMv2 is enabled.</string>
 			<key>pfm_type</key>
 			<string>boolean</string>
 		</dict>
-		<!-- END HTTPAuthentication -->
-		<!-- START ContentSettings/LegacyBrowserSupport -->
 		<dict>
 			<key>pfm_app_min</key>
 			<string>73</string>
@@ -3190,8 +3112,6 @@ For more information on Internet Explorer's SiteList policy: https://docs.micros
 			<key>pfm_value_placeholder</key>
 			<string>http://example.com/sitelist.xml</string>
 		</dict>
-		<!-- END ContentSettings/LegacyBrowserSupport -->
-		<!-- START ContentSettings/Misc -->
 		<dict>
 			<key>pfm_app_min</key>
 			<string>65</string>
@@ -3673,12 +3593,12 @@ NOTE: Until version 45, this policy was only supported in Kiosk mode.</string>
 			<string>array</string>
 		</dict>
 		<dict>
-			<key>pfm_default</key>
-			<true/>
 			<key>pfm_app_deprecated</key>
 			<string>70</string>
 			<key>pfm_app_min</key>
 			<string>8</string>
+			<key>pfm_default</key>
+			<true/>
 			<key>pfm_description</key>
 			<string>Enable AutoFill. This policy is deprecated in M70, please use AutofillAddressEnabled and AutofillCreditCardEnabled instead.</string>
 			<key>pfm_description_reference</key>
@@ -4615,7 +4535,6 @@ If disabled or not specified, taking screenshots is allowed.</string>
 			<string>boolean</string>
 		</dict>
 		<dict>
-			<!-- Documentation does not have an explicit version listed for deprecation -->
 			<key>pfm_app_deprecated</key>
 			<string>10</string>
 			<key>pfm_app_min</key>
@@ -4653,7 +4572,6 @@ If this policy is left not set the user can use any plugin installed on the syst
 			<string>array</string>
 		</dict>
 		<dict>
-			<!-- Documentation does not have an explicit version listed for deprecation -->
 			<key>pfm_app_deprecated</key>
 			<string>12</string>
 			<key>pfm_app_min</key>
@@ -4693,7 +4611,6 @@ If this policy is left not set any plugin that matches the patterns in the 'Disa
 			<string>array</string>
 		</dict>
 		<dict>
-			<!-- Documentation does not have an explicit version listed for deprecation -->
 			<key>pfm_app_deprecated</key>
 			<string>13</string>
 			<key>pfm_app_min</key>
@@ -5023,7 +4940,6 @@ If the policy is not set, or is set to false, then Google Chrome will not perfor
 			<string>boolean</string>
 		</dict>
 		<dict>
-			<!-- Documentation does not have an explicit version listed for deprecation -->
 			<key>pfm_app_deprecated</key>
 			<string>15</string>
 			<key>pfm_app_min</key>
@@ -5048,10 +4964,6 @@ If this policy is left not set the user can disable any plugin installed on the 
 			<string>https://cloud.google.com/docs/chrome-enterprise/policies/?policy=EnabledPlugins</string>
 			<key>pfm_name</key>
 			<string>EnabledPlugins</string>
-			<key>pfm_title</key>
-			<string>Enabled Plugins</string>
-			<key>pfm_type</key>
-			<string>array</string>
 			<key>pfm_subkeys</key>
 			<array>
 				<dict>
@@ -5059,6 +4971,10 @@ If this policy is left not set the user can disable any plugin installed on the 
 					<string>string</string>
 				</dict>
 			</array>
+			<key>pfm_title</key>
+			<string>Enabled Plugins</string>
+			<key>pfm_type</key>
+			<string>array</string>
 		</dict>
 		<dict>
 			<key>pfm_app_min</key>
@@ -5140,12 +5056,12 @@ If this policy is set to False, the "Always allow" checkbox is not displayed and
 			<string>boolean</string>
 		</dict>
 		<dict>
-			<key>pfm_default</key>
-			<false/>
 			<key>pfm_app_deprecated</key>
 			<string>70</string>
 			<key>pfm_app_min</key>
 			<string>66</string>
+			<key>pfm_default</key>
+			<false/>
 			<key>pfm_description</key>
 			<string>If this policy is set to true, user has to sign in to Google Chrome with their profile before using the browser. And the default value of BrowserGuestModeEnabled will be set to false. Note that existing unsigned profiles will be locked and inaccessible after enabling this policy. For more information, see help center article. This policy is deprecated, consider using BrowserSignin instead.</string>
 			<key>pfm_description_reference</key>
@@ -5210,13 +5126,12 @@ If you disable this setting or do not set a value, SafeSearch in Google Search i
 			<string>boolean</string>
 		</dict>
 		<dict>
-			<!-- Documentation does not have an explicit version listed for deprecation -->
-			<key>pfm_default</key>
-			<false/>
 			<key>pfm_app_deprecated</key>
 			<string>30</string>
 			<key>pfm_app_min</key>
 			<string>25</string>
+			<key>pfm_default</key>
+			<false/>
 			<key>pfm_description</key>
 			<string>This policy is deprecated, please use ForceGoogleSafeSearch and ForceYouTubeRestrict instead. This policy is ignored if either the ForceGoogleSafeSearch, the ForceYouTubeRestrict or the (deprecated) ForceYouTubeSafetyMode policies are set.</string>
 			<key>pfm_description_reference</key>
@@ -5353,13 +5268,12 @@ If this setting is set to Off or no value is set, Restricted Mode on YouTube is 
 			<string>integer</string>
 		</dict>
 		<dict>
-			<!-- Documentation does not have an explicit version listed for deprecation -->
-			<key>pfm_default</key>
-			<false/>
 			<key>pfm_app_deprecated</key>
 			<string>45</string>
 			<key>pfm_app_min</key>
 			<string>41</string>
+			<key>pfm_default</key>
+			<false/>
 			<key>pfm_description</key>
 			<string>This policy is deprecated. Consider using ForceYouTubeRestrict, which overrides this policy and allows more fine-grained tuning.
 
@@ -5424,12 +5338,12 @@ When this policy is set to false or is not configured, the icons are visible.</s
 			<string>boolean</string>
 		</dict>
 		<dict>
-			<key>pfm_default</key>
-			<false/>
 			<key>pfm_app_deprecated</key>
 			<string>78</string>
 			<key>pfm_app_min</key>
 			<string>54</string>
+			<key>pfm_default</key>
+			<false/>
 			<key>pfm_description</key>
 			<string>This policy enables HTTP/0.9 on ports other than 80 for HTTP and 443 for HTTPS.</string>
 			<key>pfm_description_reference</key>
@@ -5572,13 +5486,12 @@ If it is not set, the user may be asked whether to import, or importing may happ
 			<string>boolean</string>
 		</dict>
 		<dict>
-			<!-- Documentation does not have an explicit version listed for deprecation -->
-			<key>pfm_default</key>
-			<true/>
 			<key>pfm_app_deprecated</key>
 			<string>15</string>
 			<key>pfm_app_min</key>
 			<string>11</string>
+			<key>pfm_default</key>
+			<true/>
 			<key>pfm_description</key>
 			<string>This policy is deprecated. Please, use IncognitoModeAvailability instead. Enables Incognito mode in Google Chrome.
 
@@ -5684,13 +5597,12 @@ NOTE: This policy does not apply on Android. To enable IsolateOrigins on Android
 			<string>string</string>
 		</dict>
 		<dict>
-			<!-- Documentation does not have an explicit version listed for deprecation -->
-			<key>pfm_default</key>
-			<true/>
 			<key>pfm_app_deprecated</key>
 			<string>15</string>
 			<key>pfm_app_min</key>
 			<string>8</string>
+			<key>pfm_default</key>
+			<true/>
 			<key>pfm_description</key>
 			<string>This policy is deprecated, please use DefaultJavaScriptSetting instead.
 
@@ -5798,8 +5710,6 @@ Managed bookmarks are not synced to the user account and can't be modified by ex
 			<string>https://cloud.google.com/docs/chrome-enterprise/policies/?policy=ManagedBookmarks</string>
 			<key>pfm_name</key>
 			<string>ManagedBookmarks</string>
-			<key>pfm_title</key>
-			<string>Managed Bookmarks</string>
 			<key>pfm_subkeys</key>
 			<array>
 				<dict>
@@ -5829,54 +5739,6 @@ Managed bookmarks are not synced to the user account and can't be modified by ex
 							<key>pfm_type</key>
 							<string>string</string>
 						</dict>
-						<!--
-						<dict>
-							<key>pfm_description</key>
-							<string>Folder contents</string>
-							<key>pfm_description_reference</key>
-							<string></string>
-							<key>pfm_name</key>
-							<string>children</string>
-							<key>pfm_subkeys</key>
-							<array>
-								<dict>
-									<key>pfm_description</key>
-									<string></string>
-									<key>pfm_name</key>
-									<string>ManagedBookmark</string>
-									<key>pfm_subkeys</key>
-									<array>
-										<dict>
-											<key>pfm_description</key>
-											<string>Name of the bookmark.</string>
-											<key>pfm_description_reference</key>
-											<string></string>
-											<key>pfm_name</key>
-											<string>name</string>
-											<key>pfm_type</key>
-											<string>string</string>
-										</dict>
-										<dict>
-											<key>pfm_description</key>
-											<string>URL for the bookmark.</string>
-											<key>pfm_description_reference</key>
-											<string></string>
-											<key>pfm_name</key>
-											<string>url</string>
-											<key>pfm_type</key>
-											<string>string</string>
-										</dict>
-									</array>
-									<key>pfm_title</key>
-									<string></string>
-									<key>pfm_type</key>
-									<string>dictionary</string>
-								</dict>
-							</array>
-							<key>pfm_type</key>
-							<string>array</string>
-						</dict>
-							-->
 					</array>
 					<key>pfm_title</key>
 					<string></string>
@@ -5903,14 +5765,16 @@ Managed bookmarks are not synced to the user account and can't be modified by ex
 					<string>dictionary</string>
 				</dict>
 			</array>
+			<key>pfm_title</key>
+			<string>Managed Bookmarks</string>
 			<key>pfm_type</key>
 			<string>array</string>
 		</dict>
 		<dict>
-			<key>pfm_default</key>
-			<integer>32</integer>
 			<key>pfm_app_min</key>
 			<string>14</string>
+			<key>pfm_default</key>
+			<integer>32</integer>
 			<key>pfm_description</key>
 			<string>Specifies the maximal number of simultaneous connections to the proxy server.</string>
 			<key>pfm_description_reference</key>
@@ -6440,8 +6304,6 @@ If you choose the value 'pac_script' as 'ProxyMode', the 'ProxyPacUrl' and 'Prox
 					<key>pfm_subkeys</key>
 					<array>
 						<dict>
-							<!-- <key>pfm_description_reference</key>
-							<string>The ProxyMode field allows you to specify the proxy server used by Google Chrome and prevents users from changing proxy settings.</string> -->
 							<key>pfm_name</key>
 							<string>ProxyMode</string>
 							<key>pfm_range_list</key>
@@ -6464,8 +6326,6 @@ If you choose the value 'pac_script' as 'ProxyMode', the 'ProxyPacUrl' and 'Prox
 							<string>string</string>
 						</dict>
 						<dict>
-							<!-- <key>pfm_description_reference</key>
-							<string>The ProxyPacUrl field is a URL to a proxy .pac file.</string> -->
 							<key>pfm_format</key>
 							<string>^https?://.*.pac$</string>
 							<key>pfm_name</key>
@@ -6476,8 +6336,6 @@ If you choose the value 'pac_script' as 'ProxyMode', the 'ProxyPacUrl' and 'Prox
 							<string>https://internal.site/example.pac</string>
 						</dict>
 						<dict>
-							<!-- <key>pfm_description_reference</key>
-							<string>The ProxyServer field is a URL of the proxy server.</string> -->
 							<key>pfm_name</key>
 							<string>ProxyServer</string>
 							<key>pfm_type</key>
@@ -6486,8 +6344,6 @@ If you choose the value 'pac_script' as 'ProxyMode', the 'ProxyPacUrl' and 'Prox
 							<string>123.123.123.123:8080</string>
 						</dict>
 						<dict>
-							<!-- <key>pfm_description_reference</key>
-							<string>The ProxyBypassList field is a list of proxy hosts that Google Chrome will bypass.</string> -->
 							<key>pfm_name</key>
 							<string>ProxyBypassList</string>
 							<key>pfm_subkeys</key>
@@ -6919,7 +6775,6 @@ If this policy is set to Disabled, Signed HTTP Exchanges cannot be loaded.</stri
 			<string>boolean</string>
 		</dict>
 		<dict>
-			<!-- Documentation does not have an explicit version listed for deprecation -->
 			<key>pfm_app_deprecated</key>
 			<string>30</string>
 			<key>pfm_app_min</key>
@@ -7505,7 +7360,7 @@ If this policy is enabled or not set the User-Agent Client Hints feature is enab
 			<key>pfm_description_reference</key>
 			<string>Allow user feedback. If the policy is set to false, users can not send feedback to Google.
 
-If the policy is unset or set to true, users can send feedback to Google via Menu->Help->Report an Issue or key combination.</string>
+If the policy is unset or set to true, users can send feedback to Google via Menu-&gt;Help-&gt;Report an Issue or key combination.</string>
 			<key>pfm_documentation_url</key>
 			<string>https://cloud.google.com/docs/chrome-enterprise/policies/?policy=UserFeedbackAllowed</string>
 			<key>pfm_name</key>
@@ -7856,8 +7711,6 @@ If the policy is not set, or if it is set to the empty string or an invalid port
 			<key>pfm_value_placeholder</key>
 			<string>port range (ex. 10000-11999)</string>
 		</dict>
-		<!-- END ContentSettings/Misc -->
-		<!-- START NativeMessaging -->
 		<dict>
 			<key>pfm_app_deprecated</key>
 			<string>86</string>
@@ -8004,8 +7857,6 @@ By default, all native messaging hosts are allowed, but if all native messaging 
 			<key>pfm_type</key>
 			<string>array</string>
 		</dict>
-		<!-- END NativeMessaging -->
-		<!-- START PasswordManager -->
 		<dict>
 			<key>pfm_app_min</key>
 			<string>79</string>
@@ -8049,8 +7900,6 @@ If this policy is enabled or disabled, users cannot change or override it in Goo
 			<key>pfm_type</key>
 			<string>boolean</string>
 		</dict>
-		<!-- END PasswordManager -->
-		<!-- START Printing -->
 		<dict>
 			<key>pfm_app_min</key>
 			<string>17</string>
@@ -8388,21 +8237,21 @@ If the page size is unavailable on the printer chosen by the user this policy is
 						</dict>
 					</array>
 					<key>pfm_exclude</key>
+					<array>
+						<dict>
+							<key>pfm_target_conditions</key>
 							<array>
 								<dict>
-									<key>pfm_target_conditions</key>
+									<key>pfm_n_range_list</key>
 									<array>
-										<dict>
-											<key>pfm_n_range_list</key>
-											<array>
-												<string>custom</string>
-											</array>
-											<key>pfm_target</key>
-											<string>PrinterPaperSizeDefault.name</string>
-										</dict>
+										<string>custom</string>
 									</array>
+									<key>pfm_target</key>
+									<string>PrinterPaperSizeDefault.name</string>
 								</dict>
 							</array>
+						</dict>
+					</array>
 					<key>pfm_name</key>
 					<string>custom_size</string>
 					<key>pfm_subkeys</key>
@@ -8659,8 +8508,6 @@ If the page size is unavailable on the printer chosen by the user this policy is
 			<key>pfm_type</key>
 			<string>dictionary</string>
 		</dict>
-		<!-- END Printing -->
-		<!-- START ProxyServer -->
 		<dict>
 			<key>pfm_app_min</key>
 			<string>8</string>
@@ -8785,7 +8632,6 @@ https://www.chromium.org/developers/design-documents/network-settings#TOC-Comman
 			<string>string</string>
 		</dict>
 		<dict>
-			<!-- Documentation does not have an explicit version listed for deprecation -->
 			<key>pfm_app_deprecated</key>
 			<string>10</string>
 			<key>pfm_app_min</key>
@@ -8838,8 +8684,6 @@ Leaving this policy not set will allow the users to choose the proxy settings on
 			<key>pfm_type</key>
 			<string>integer</string>
 		</dict>
-		<!-- END ProxyServer -->
-		<!-- START RemoteAccess -->
 		<dict>
 			<key>pfm_app_min</key>
 			<string>30</string>
@@ -9216,9 +9060,6 @@ If this policy is left not set, or if it is set to an empty string, the remote a
 			<key>pfm_value_unit</key>
 			<string>port range</string>
 		</dict>
-		<!-- END RemoteAccess -->
-		<!-- START SafeBrowsing -->
-		<!-- Documentation does not have an explicit version listed for deprecation -->
 		<dict>
 			<key>pfm_app_min</key>
 			<string>69</string>
@@ -9516,8 +9357,6 @@ See https://developers.google.com/safe-browsing for more info on Safe Browsing.<
 			<key>pfm_type</key>
 			<string>boolean</string>
 		</dict>
-		<!-- END SafeBrowsing -->
-		<!-- START StartupHomepageNewTabPage -->
 		<dict>
 			<key>pfm_app_min</key>
 			<string>8</string>
@@ -9695,7 +9534,6 @@ Leaving this policy not set will allow the user to choose whether to show the ho
 			<key>pfm_type</key>
 			<string>boolean</string>
 		</dict>
-		<!-- END StartupHomepageNewTabPage -->
 		<dict>
 			<key>pfm_app_min</key>
 			<string>68</string>
@@ -9755,12 +9593,12 @@ URL patterns in this policy should not clash with ones configured via WebUsbAskF
 			<string>array</string>
 		</dict>
 		<dict>
-			<key>pfm_default</key>
-			<false/>
 			<key>pfm_app_deprecated</key>
 			<string>68</string>
 			<key>pfm_app_min</key>
 			<string>9</string>
+			<key>pfm_default</key>
+			<false/>
 			<key>pfm_description</key>
 			<string>Disables the Developer Tools and the JavaScript console. This policy is deprecated in M68, please use DeveloperToolsAvailability instead.</string>
 			<key>pfm_description_reference</key>

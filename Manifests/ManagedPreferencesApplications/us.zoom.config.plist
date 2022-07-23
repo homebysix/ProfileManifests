@@ -127,6 +127,14 @@
 			<string>always</string>
 			<key>pfm_segments</key>
 			<dict>
+				<key>Chat</key>
+				<array>
+					<string>DisableLinkPreviewInChat</string>
+					<string>MuteIMNotificationWhenInMeeting</string>
+					<string>PlaySoundForIMMessage</string>
+					<string>ShowIMMessagePreview</string>
+					<string>ShowVoiceMessageButton</string>
+				</array>
 				<key>General</key>
 				<array>
 					<string>Account</string>
@@ -231,14 +239,6 @@
 					<string>ZHideNoVideoUser</string>
 					<string>ZRemoteControllAllApp</string>
 					<string>ZUse720PByDefault</string>
-				</array>
-				<key>Chat</key>
-				<array>
-					<string>DisableLinkPreviewInChat</string>
-					<string>MuteIMNotificationWhenInMeeting</string>
-					<string>PlaySoundForIMMessage</string>
-					<string>ShowIMMessagePreview</string>
-					<string>ShowVoiceMessageButton</string>
 				</array>
 			</dict>
 			<key>pfm_type</key>
@@ -419,7 +419,7 @@
 			<string>Set Default Web Domain</string>
 			<key>pfm_type</key>
 			<string>string</string>
-		</dict>	
+		</dict>
 		<dict>
 			<key>pfm_description</key>
 			<string>Set the email address domain that users can login with</string>
