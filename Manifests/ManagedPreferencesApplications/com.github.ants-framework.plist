@@ -21,6 +21,30 @@
 	<key>pfm_subkeys</key>
 	<array>
 		<dict>
+			<key>pfm_name</key>
+			<string>PFC_SegmentedControl_0</string>
+			<key>pfm_range_list_titles</key>
+			<array>
+				<string>General</string>
+				<string>Active Directory</string>
+			</array>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_segments</key>
+			<dict>
+				<key>Active Directory</key>
+				<array>
+					<string>ad</string>
+				</array>
+				<key>General</key>
+				<array>
+					<string>main</string>
+				</array>
+			</dict>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
 			<key>pfm_default</key>
 			<string>Configures the ANTS framework configuration preferences</string>
 			<key>pfm_description</key>
@@ -61,6 +85,16 @@
 			<string>string</string>
 		</dict>
 		<dict>
+			<key>pfm_description</key>
+			<string>This value describes the issuing organization of the profile, as displayed to the user</string>
+			<key>pfm_name</key>
+			<string>PayloadOrganization</string>
+			<key>pfm_title</key>
+			<string>Payload Organization</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
 			<key>pfm_default</key>
 			<string></string>
 			<key>pfm_description</key>
@@ -92,37 +126,126 @@
 		</dict>
 		<dict>
 			<key>pfm_description</key>
-			<string>This value describes the issuing organization of the profile, as displayed to the user</string>
+			<string>Active Directory</string>
+			<key>pfm_hidden</key>
+			<string>container</string>
 			<key>pfm_name</key>
-			<string>PayloadOrganization</string>
-			<key>pfm_title</key>
-			<string>Payload Organization</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_name</key>
-			<string>PFC_SegmentedControl_0</string>
-			<key>pfm_range_list_titles</key>
+			<string>ad</string>
+			<key>pfm_subkeys</key>
 			<array>
-				<string>General</string>
-				<string>Active Directory</string>
+				<dict>
+					<key>pfm_default</key>
+					<string>ldap\changeme</string>
+					<key>pfm_description</key>
+					<string>User name to use to connect to LDAP.</string>
+					<key>pfm_name</key>
+					<string>ldap_user</string>
+					<key>pfm_title</key>
+					<string>LDAP User</string>
+					<key>pfm_type</key>
+					<string>string</string>
+				</dict>
+				<dict>
+					<key>pfm_default</key>
+					<string>changeme</string>
+					<key>pfm_description</key>
+					<string>Password to use to connect to LDAP.</string>
+					<key>pfm_name</key>
+					<string>ldap_pw</string>
+					<key>pfm_title</key>
+					<string>LDAP Password</string>
+					<key>pfm_type</key>
+					<string>string</string>
+				</dict>
+				<dict>
+					<key>pfm_default</key>
+					<string>LDAP.PRETENDCORP.COM</string>
+					<key>pfm_description</key>
+					<string>LDAP server to connect to for inventory purposes.</string>
+					<key>pfm_name</key>
+					<string>ldap_host</string>
+					<key>pfm_title</key>
+					<string>LDAP Host</string>
+					<key>pfm_type</key>
+					<string>string</string>
+				</dict>
+				<dict>
+					<key>pfm_default</key>
+					<string>DC=ldap,DC=pretendcorp,DC=com</string>
+					<key>pfm_description</key>
+					<string>LDAP location of computer objects.</string>
+					<key>pfm_name</key>
+					<string>ldap_ou_computers</string>
+					<key>pfm_title</key>
+					<string>LDAP OU Computers</string>
+					<key>pfm_type</key>
+					<string>string</string>
+				</dict>
+				<dict>
+					<key>pfm_default</key>
+					<string>OU=ants,OU=Groups,DC=ldap,DC=pretendcorp,DC=com</string>
+					<key>pfm_description</key>
+					<string>LDAP location of group objects.</string>
+					<key>pfm_name</key>
+					<string>ldap_ou_groups</string>
+					<key>pfm_title</key>
+					<string>LDAP OU Groups</string>
+					<key>pfm_type</key>
+					<string>string</string>
+				</dict>
+				<dict>
+					<key>pfm_default</key>
+					<string>/etc/ants/inventory_cache.json</string>
+					<key>pfm_description</key>
+					<string>Absolute path to a cache file of Active Directory results.</string>
+					<key>pfm_name</key>
+					<string>cache_file</string>
+					<key>pfm_title</key>
+					<string>Cache File</string>
+					<key>pfm_type</key>
+					<string>string</string>
+				</dict>
+				<dict>
+					<key>pfm_default</key>
+					<string>ants-</string>
+					<key>pfm_description</key>
+					<string>Group prefix used to filter groups from Active Directory.</string>
+					<key>pfm_name</key>
+					<string>group_prefix</string>
+					<key>pfm_title</key>
+					<string>Group Prefix</string>
+					<key>pfm_type</key>
+					<string>string</string>
+				</dict>
+				<dict>
+					<key>pfm_default</key>
+					<string>ants-common</string>
+					<key>pfm_description</key>
+					<string>A common group to put all computers in.</string>
+					<key>pfm_name</key>
+					<string>common_group</string>
+					<key>pfm_title</key>
+					<string>Common Group</string>
+					<key>pfm_type</key>
+					<string>string</string>
+				</dict>
+				<dict>
+					<key>pfm_default</key>
+					<string>common_ad_connected</string>
+					<key>pfm_description</key>
+					<string>A common group that computers are put in when the inventory script actively connects to Active Directory.</string>
+					<key>pfm_name</key>
+					<string>common_ad_connected</string>
+					<key>pfm_title</key>
+					<string>Common AD Connected</string>
+					<key>pfm_type</key>
+					<string>string</string>
+				</dict>
 			</array>
-			<key>pfm_require</key>
-			<string>always</string>
-			<key>pfm_segments</key>
-			<dict>
-				<key>Active Directory</key>
-				<array>
-					<string>ad</string>
-				</array>
-				<key>General</key>
-				<array>
-					<string>main</string>
-				</array>
-			</dict>
+			<key>pfm_title</key>
+			<string>Active Directory</string>
 			<key>pfm_type</key>
-			<string>string</string>
+			<string>dictionary</string>
 		</dict>
 		<dict>
 			<key>pfm_description</key>
@@ -288,129 +411,6 @@
 			</array>
 			<key>pfm_title</key>
 			<string>General</string>
-			<key>pfm_type</key>
-			<string>dictionary</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Active Directory</string>
-			<key>pfm_hidden</key>
-			<string>container</string>
-			<key>pfm_name</key>
-			<string>ad</string>
-			<key>pfm_subkeys</key>
-			<array>
-				<dict>
-					<key>pfm_default</key>
-					<string>ldap\changeme</string>
-					<key>pfm_description</key>
-					<string>User name to use to connect to LDAP.</string>
-					<key>pfm_name</key>
-					<string>ldap_user</string>
-					<key>pfm_title</key>
-					<string>LDAP User</string>
-					<key>pfm_type</key>
-					<string>string</string>
-				</dict>
-				<dict>
-					<key>pfm_default</key>
-					<string>changeme</string>
-					<key>pfm_description</key>
-					<string>Password to use to connect to LDAP.</string>
-					<key>pfm_name</key>
-					<string>ldap_pw</string>
-					<key>pfm_title</key>
-					<string>LDAP Password</string>
-					<key>pfm_type</key>
-					<string>string</string>
-				</dict>
-				<dict>
-					<key>pfm_default</key>
-					<string>LDAP.PRETENDCORP.COM</string>
-					<key>pfm_description</key>
-					<string>LDAP server to connect to for inventory purposes.</string>
-					<key>pfm_name</key>
-					<string>ldap_host</string>
-					<key>pfm_title</key>
-					<string>LDAP Host</string>
-					<key>pfm_type</key>
-					<string>string</string>
-				</dict>
-				<dict>
-					<key>pfm_default</key>
-					<string>DC=ldap,DC=pretendcorp,DC=com</string>
-					<key>pfm_description</key>
-					<string>LDAP location of computer objects.</string>
-					<key>pfm_name</key>
-					<string>ldap_ou_computers</string>
-					<key>pfm_title</key>
-					<string>LDAP OU Computers</string>
-					<key>pfm_type</key>
-					<string>string</string>
-				</dict>
-				<dict>
-					<key>pfm_default</key>
-					<string>OU=ants,OU=Groups,DC=ldap,DC=pretendcorp,DC=com</string>
-					<key>pfm_description</key>
-					<string>LDAP location of group objects.</string>
-					<key>pfm_name</key>
-					<string>ldap_ou_groups</string>
-					<key>pfm_title</key>
-					<string>LDAP OU Groups</string>
-					<key>pfm_type</key>
-					<string>string</string>
-				</dict>
-				<dict>
-					<key>pfm_default</key>
-					<string>/etc/ants/inventory_cache.json</string>
-					<key>pfm_description</key>
-					<string>Absolute path to a cache file of Active Directory results.</string>
-					<key>pfm_name</key>
-					<string>cache_file</string>
-					<key>pfm_title</key>
-					<string>Cache File</string>
-					<key>pfm_type</key>
-					<string>string</string>
-				</dict>
-				<dict>
-					<key>pfm_default</key>
-					<string>ants-</string>
-					<key>pfm_description</key>
-					<string>Group prefix used to filter groups from Active Directory.</string>
-					<key>pfm_name</key>
-					<string>group_prefix</string>
-					<key>pfm_title</key>
-					<string>Group Prefix</string>
-					<key>pfm_type</key>
-					<string>string</string>
-				</dict>
-				<dict>
-					<key>pfm_default</key>
-					<string>ants-common</string>
-					<key>pfm_description</key>
-					<string>A common group to put all computers in.</string>
-					<key>pfm_name</key>
-					<string>common_group</string>
-					<key>pfm_title</key>
-					<string>Common Group</string>
-					<key>pfm_type</key>
-					<string>string</string>
-				</dict>
-				<dict>
-					<key>pfm_default</key>
-					<string>common_ad_connected</string>
-					<key>pfm_description</key>
-					<string>A common group that computers are put in when the inventory script actively connects to Active Directory.</string>
-					<key>pfm_name</key>
-					<string>common_ad_connected</string>
-					<key>pfm_title</key>
-					<string>Common AD Connected</string>
-					<key>pfm_type</key>
-					<string>string</string>
-				</dict>
-			</array>
-			<key>pfm_title</key>
-			<string>Active Directory</string>
 			<key>pfm_type</key>
 			<string>dictionary</string>
 		</dict>

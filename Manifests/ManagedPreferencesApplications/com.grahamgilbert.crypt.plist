@@ -21,6 +21,40 @@
 	<key>pfm_subkeys</key>
 	<array>
 		<dict>
+			<key>pfm_app_min</key>
+			<string>3.0.0</string>
+			<key>pfm_default</key>
+			<integer>1</integer>
+			<key>pfm_description</key>
+			<string>Time interval in Hours for how often Crypt tries to re-escrow the key to Crypt-Server after the first successful escrow.</string>
+			<key>pfm_description_reference</key>
+			<string>As of version 3.0.0 you can now define the time interval in Hours for how often Crypt tries to re-escrow the key to Crypt-Server after the first successful escrow.</string>
+			<key>pfm_name</key>
+			<string>KeyEscrowInterval</string>
+			<key>pfm_title</key>
+			<string>Recovery key re-escrow interval</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+			<key>pfm_value_unit</key>
+			<string>Hours</string>
+		</dict>
+		<dict>
+			<key>pfm_app_min</key>
+			<string>3.0.0</string>
+			<key>pfm_default</key>
+			<string>/var/root/crypt_output.plist</string>
+			<key>pfm_description</key>
+			<string>Path where the recovery key plist is written to disk.</string>
+			<key>pfm_description_reference</key>
+			<string>As of version 3.0.0 you can now define a new location for where the recovery key is written to.</string>
+			<key>pfm_name</key>
+			<string>OutputPath</string>
+			<key>pfm_title</key>
+			<string>Recovery key plist path</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
 			<key>pfm_default</key>
 			<string>Configures Crypt settings</string>
 			<key>pfm_description</key>
@@ -57,6 +91,16 @@
 			<string>always</string>
 			<key>pfm_title</key>
 			<string>Payload Identifier</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>This value describes the issuing organization of the profile, as displayed to the user.</string>
+			<key>pfm_name</key>
+			<string>PayloadOrganization</string>
+			<key>pfm_title</key>
+			<string>Payload Organization</string>
 			<key>pfm_type</key>
 			<string>string</string>
 		</dict>
@@ -105,24 +149,29 @@
 			<string>integer</string>
 		</dict>
 		<dict>
+			<key>pfm_app_min</key>
+			<string>3.2.0</string>
 			<key>pfm_description</key>
-			<string>This value describes the issuing organization of the profile, as displayed to the user.</string>
-			<key>pfm_name</key>
-			<string>PayloadOrganization</string>
-			<key>pfm_title</key>
-			<string>Payload Organization</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
+			<string>Command that is run after Crypt has detected an error condition with a stored key that cannot be resolved silently - either it has failed validation or the server has instructed the client to rotate the key. These cannot be resolved silently on APFS volumes, so the user will need to log in again. If you have a tool that can enforce a logout or a reboot, you can run it here.</string>
 			<key>pfm_description_reference</key>
-			<string>URL to your Crypt Server.</string>
+			<string>(Introduced in version 3.2.0) This is a command that is run after Crypt has detected an error condition with a stored key that cannot be resolved silently - either it has failed validation or the server has instructed the client to rotate the key. These cannot be resolved silently on APFS volumes, so the user will need to log in again. If you have a tool that can enforce a logout or a reboot, you can run it here. This preference can either be a string if your command has no spaces, or an array if there are spaces in the command.</string>
 			<key>pfm_name</key>
-			<string>ServerURL</string>
-			<key>pfm_require</key>
-			<string>always</string>
+			<string>PostRunCommand</string>
+			<key>pfm_subkeys</key>
+			<array>
+				<dict>
+					<key>pfm_description</key>
+					<string></string>
+					<key>pfm_name</key>
+					<string>Command</string>
+					<key>pfm_type</key>
+					<string>string</string>
+				</dict>
+			</array>
+			<key>pfm_title</key>
+			<string>Recovery key error command</string>
 			<key>pfm_type</key>
-			<string>string</string>
+			<string>array</string>
 		</dict>
 		<dict>
 			<key>pfm_default</key>
@@ -157,52 +206,14 @@
 			<string>boolean</string>
 		</dict>
 		<dict>
-			<key>pfm_default</key>
-			<true/>
-			<key>pfm_description</key>
-			<string>If the recovery key plist is still present on the disk, validates the recovery key. If the key fails validation, the plist is removed so it can be regenerated on next login.</string>
 			<key>pfm_description_reference</key>
-			<string>If True, and the key is kept on disk Crypt will validate the recovery key. If the key fails validation, the plist is removed so it can be regenerated on next login.</string>
+			<string>URL to your Crypt Server.</string>
 			<key>pfm_name</key>
-			<string>ValidateKey</string>
-			<key>pfm_title</key>
-			<string>Validate recovery key</string>
-			<key>pfm_type</key>
-			<string>boolean</string>
-		</dict>
-		<dict>
-			<key>pfm_app_min</key>
-			<string>3.0.0</string>
-			<key>pfm_default</key>
-			<string>/var/root/crypt_output.plist</string>
-			<key>pfm_description</key>
-			<string>Path where the recovery key plist is written to disk.</string>
-			<key>pfm_description_reference</key>
-			<string>As of version 3.0.0 you can now define a new location for where the recovery key is written to.</string>
-			<key>pfm_name</key>
-			<string>OutputPath</string>
-			<key>pfm_title</key>
-			<string>Recovery key plist path</string>
+			<string>ServerURL</string>
+			<key>pfm_require</key>
+			<string>always</string>
 			<key>pfm_type</key>
 			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_app_min</key>
-			<string>3.0.0</string>
-			<key>pfm_default</key>
-			<integer>1</integer>
-			<key>pfm_description</key>
-			<string>Time interval in Hours for how often Crypt tries to re-escrow the key to Crypt-Server after the first successful escrow.</string>
-			<key>pfm_description_reference</key>
-			<string>As of version 3.0.0 you can now define the time interval in Hours for how often Crypt tries to re-escrow the key to Crypt-Server after the first successful escrow.</string>
-			<key>pfm_name</key>
-			<string>KeyEscrowInterval</string>
-			<key>pfm_title</key>
-			<string>Recovery key re-escrow interval</string>
-			<key>pfm_type</key>
-			<string>integer</string>
-			<key>pfm_value_unit</key>
-			<string>Hours</string>
 		</dict>
 		<dict>
 			<key>pfm_description</key>
@@ -228,29 +239,18 @@
 			<string>array</string>
 		</dict>
 		<dict>
-			<key>pfm_app_min</key>
-			<string>3.2.0</string>
+			<key>pfm_default</key>
+			<true/>
 			<key>pfm_description</key>
-			<string>Command that is run after Crypt has detected an error condition with a stored key that cannot be resolved silently - either it has failed validation or the server has instructed the client to rotate the key. These cannot be resolved silently on APFS volumes, so the user will need to log in again. If you have a tool that can enforce a logout or a reboot, you can run it here.</string>
+			<string>If the recovery key plist is still present on the disk, validates the recovery key. If the key fails validation, the plist is removed so it can be regenerated on next login.</string>
 			<key>pfm_description_reference</key>
-			<string>(Introduced in version 3.2.0) This is a command that is run after Crypt has detected an error condition with a stored key that cannot be resolved silently - either it has failed validation or the server has instructed the client to rotate the key. These cannot be resolved silently on APFS volumes, so the user will need to log in again. If you have a tool that can enforce a logout or a reboot, you can run it here. This preference can either be a string if your command has no spaces, or an array if there are spaces in the command.</string>
+			<string>If True, and the key is kept on disk Crypt will validate the recovery key. If the key fails validation, the plist is removed so it can be regenerated on next login.</string>
 			<key>pfm_name</key>
-			<string>PostRunCommand</string>
-			<key>pfm_subkeys</key>
-			<array>
-				<dict>
-					<key>pfm_description</key>
-					<string></string>
-					<key>pfm_name</key>
-					<string>Command</string>
-					<key>pfm_type</key>
-					<string>string</string>
-				</dict>
-			</array>
+			<string>ValidateKey</string>
 			<key>pfm_title</key>
-			<string>Recovery key error command</string>
+			<string>Validate recovery key</string>
 			<key>pfm_type</key>
-			<string>array</string>
+			<string>boolean</string>
 		</dict>
 	</array>
 	<key>pfm_targets</key>

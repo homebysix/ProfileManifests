@@ -63,6 +63,16 @@
 			<string>string</string>
 		</dict>
 		<dict>
+			<key>pfm_description</key>
+			<string>This value describes the issuing organization of the profile, as displayed to the user</string>
+			<key>pfm_name</key>
+			<string>PayloadOrganization</string>
+			<key>pfm_title</key>
+			<string>Payload Organization</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
 			<key>pfm_default</key>
 			<string>com.apple.universalaccess</string>
 			<key>pfm_description</key>
@@ -108,25 +118,17 @@
 		</dict>
 		<dict>
 			<key>pfm_description</key>
-			<string>This value describes the issuing organization of the profile, as displayed to the user</string>
+			<string>The minimal zoom magnification that can be set in the Zoom options in an integer value between 1 and 40</string>
 			<key>pfm_name</key>
-			<string>PayloadOrganization</string>
+			<string>closeViewFarPoint</string>
+			<key>pfm_range_max</key>
+			<integer>40</integer>
+			<key>pfm_range_min</key>
+			<integer>1</integer>
 			<key>pfm_title</key>
-			<string>Payload Organization</string>
+			<string>Minimum Zoom</string>
 			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<false/>
-			<key>pfm_description</key>
-			<string>Turns on "Use scroll gesture with modifier keys to zoom" in the zoom options</string>
-			<key>pfm_name</key>
-			<string>closeViewScrollWheelToggle</string>
-			<key>pfm_title</key>
-			<string>Enable Zoom via ScrollWheel</string>
-			<key>pfm_type</key>
-			<string>boolean</string>
+			<string>integer</string>
 		</dict>
 		<dict>
 			<key>pfm_default</key>
@@ -155,18 +157,16 @@
 			<string>integer</string>
 		</dict>
 		<dict>
+			<key>pfm_default</key>
+			<false/>
 			<key>pfm_description</key>
-			<string>The minimal zoom magnification that can be set in the Zoom options in an integer value between 1 and 40</string>
+			<string>Turns on "Use scroll gesture with modifier keys to zoom" in the zoom options</string>
 			<key>pfm_name</key>
-			<string>closeViewFarPoint</string>
-			<key>pfm_range_max</key>
-			<integer>40</integer>
-			<key>pfm_range_min</key>
-			<integer>1</integer>
+			<string>closeViewScrollWheelToggle</string>
 			<key>pfm_title</key>
-			<string>Minimum Zoom</string>
+			<string>Enable Zoom via ScrollWheel</string>
 			<key>pfm_type</key>
-			<string>integer</string>
+			<string>boolean</string>
 		</dict>
 		<dict>
 			<key>pfm_default</key>
@@ -196,13 +196,29 @@
 		</dict>
 		<dict>
 			<key>pfm_default</key>
+			<real>0.0</real>
+			<key>pfm_description</key>
+			<string>The amount of display contrast enhancement in a decimal value between 0 and 1, where 0 is none and 1 is the maximum</string>
+			<key>pfm_name</key>
+			<string>contrast</string>
+			<key>pfm_range_max</key>
+			<real>1.0</real>
+			<key>pfm_range_min</key>
+			<real>0.0</real>
+			<key>pfm_title</key>
+			<string>Display Contrast</string>
+			<key>pfm_type</key>
+			<string>real</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
 			<false/>
 			<key>pfm_description</key>
-			<string>Turns on "Invert colors" in Display options</string>
+			<string>Turns on "Flash the screen when an alert sound occurs" in the Audio options</string>
 			<key>pfm_name</key>
-			<string>whiteOnBlack</string>
+			<string>flashScreen</string>
 			<key>pfm_title</key>
-			<string>Invert colors</string>
+			<string>Flash screen on alert sound</string>
 			<key>pfm_type</key>
 			<string>boolean</string>
 		</dict>
@@ -222,31 +238,27 @@
 		</dict>
 		<dict>
 			<key>pfm_default</key>
-			<real>0.0</real>
+			<false/>
 			<key>pfm_description</key>
-			<string>The amount of display contrast enhancement in a decimal value between 0 and 1, where 0 is none and 1 is the maximum</string>
+			<string>Turns on "Enable Mouse Keys" in the Pointer Control options. Mouse Keys allows the mouse pointer to be controlled using the keyboard number pad</string>
 			<key>pfm_name</key>
-			<string>contrast</string>
-			<key>pfm_range_max</key>
-			<real>1</real>
-			<key>pfm_range_min</key>
-			<real>0.0</real>
+			<string>mouseDriver</string>
 			<key>pfm_title</key>
-			<string>Display Contrast</string>
+			<string>Enable Mouse Keys</string>
 			<key>pfm_type</key>
-			<string>real</string>
+			<string>boolean</string>
 		</dict>
 		<dict>
 			<key>pfm_default</key>
-			<real>1</real>
+			<real>1.0</real>
 			<key>pfm_description</key>
 			<string>The size of the mouse cursor in a decimal value between 1 and 4, where 1 is normal and 4 is the maximum</string>
 			<key>pfm_name</key>
 			<string>mouseDriverCursorSize</string>
 			<key>pfm_range_max</key>
-			<real>4</real>
+			<real>4.0</real>
 			<key>pfm_range_min</key>
-			<real>1</real>
+			<real>1.0</real>
 			<key>pfm_title</key>
 			<string>Cursor Size</string>
 			<key>pfm_type</key>
@@ -256,73 +268,41 @@
 			<key>pfm_default</key>
 			<false/>
 			<key>pfm_description</key>
-			<string>VoiceOver provides spoken and brailled descriptions of items on the computer screen and provides control of the computer through the user of the keyboard</string>
+			<string>Turns on "Ignore built-in trackpad when mouse or wireless trackpad is present" in the Mouse &amp; Trackpad options</string>
 			<key>pfm_name</key>
-			<string>voiceOverOnOffKey</string>
+			<string>mouseDriverIgnoreTrackpad</string>
 			<key>pfm_title</key>
-			<string>Enable VoiceOver</string>
+			<string>Ignore built-in trackpad</string>
 			<key>pfm_type</key>
 			<string>boolean</string>
 		</dict>
 		<dict>
 			<key>pfm_default</key>
-			<false/>
+			<real>1.0</real>
 			<key>pfm_description</key>
-			<string>Turns on "Flash the screen when an alert sound occurs" in the Audio options</string>
+			<string>The initial delay before moving the mouse cursor with Mouse Keys in a decimal value representing seconds</string>
 			<key>pfm_name</key>
-			<string>flashScreen</string>
+			<string>mouseDriverInitialDelay</string>
 			<key>pfm_title</key>
-			<string>Flash screen on alert sound</string>
+			<string>Initial delay</string>
 			<key>pfm_type</key>
-			<string>boolean</string>
+			<string>real</string>
+			<key>pfm_value_unit</key>
+			<string>seconds</string>
 		</dict>
 		<dict>
-			<key>pfm_default</key>
-			<false/>
 			<key>pfm_description</key>
-			<string>Turns on "Play stereo audio as mono" in the Audio options</string>
+			<string>The maximum speed for the cursor when using Mouse Keys in an integer value between 1 and 32, where 1 is the slowest and 32 is the fastest</string>
 			<key>pfm_name</key>
-			<string>stereoAsMono</string>
+			<string>mouseDriverMaxSpeed</string>
+			<key>pfm_range_max</key>
+			<integer>32</integer>
+			<key>pfm_range_min</key>
+			<integer>1</integer>
 			<key>pfm_title</key>
-			<string>Play stereo audio as mono</string>
+			<string>Maximum speed</string>
 			<key>pfm_type</key>
-			<string>boolean</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<false/>
-			<key>pfm_description</key>
-			<string>Turns on "Sticky Keys" in the Keyboard options. Sticky keys allows modifier keys to be set without having to hold the key down</string>
-			<key>pfm_name</key>
-			<string>stickyKey</string>
-			<key>pfm_title</key>
-			<string>Enable Sticky Keys</string>
-			<key>pfm_type</key>
-			<string>boolean</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<false/>
-			<key>pfm_description</key>
-			<string>Turns on "Display pressed keys on screen" for Sticky Keys in Keyboard options</string>
-			<key>pfm_name</key>
-			<string>stickyKeyShowWindow</string>
-			<key>pfm_title</key>
-			<string>Display pressed keys on screen</string>
-			<key>pfm_type</key>
-			<string>boolean</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<false/>
-			<key>pfm_description</key>
-			<string>Turns on "Beep when a modifier key is set" for Sticky Keys in Keyboard options</string>
-			<key>pfm_name</key>
-			<string>stickyKeyBeepOnModifier</string>
-			<key>pfm_title</key>
-			<string>Beep when a modifier key is set</string>
-			<key>pfm_type</key>
-			<string>boolean</string>
+			<string>integer</string>
 		</dict>
 		<dict>
 			<key>pfm_default</key>
@@ -366,51 +346,71 @@
 			<key>pfm_default</key>
 			<false/>
 			<key>pfm_description</key>
-			<string>Turns on "Enable Mouse Keys" in the Pointer Control options. Mouse Keys allows the mouse pointer to be controlled using the keyboard number pad</string>
+			<string>Turns on "Play stereo audio as mono" in the Audio options</string>
 			<key>pfm_name</key>
-			<string>mouseDriver</string>
+			<string>stereoAsMono</string>
 			<key>pfm_title</key>
-			<string>Enable Mouse Keys</string>
+			<string>Play stereo audio as mono</string>
 			<key>pfm_type</key>
 			<string>boolean</string>
 		</dict>
 		<dict>
 			<key>pfm_default</key>
-			<real>1</real>
+			<false/>
 			<key>pfm_description</key>
-			<string>The initial delay before moving the mouse cursor with Mouse Keys in a decimal value representing seconds</string>
+			<string>Turns on "Sticky Keys" in the Keyboard options. Sticky keys allows modifier keys to be set without having to hold the key down</string>
 			<key>pfm_name</key>
-			<string>mouseDriverInitialDelay</string>
+			<string>stickyKey</string>
 			<key>pfm_title</key>
-			<string>Initial delay</string>
+			<string>Enable Sticky Keys</string>
 			<key>pfm_type</key>
-			<string>real</string>
-			<key>pfm_value_unit</key>
-			<string>seconds</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>The maximum speed for the cursor when using Mouse Keys in an integer value between 1 and 32, where 1 is the slowest and 32 is the fastest</string>
-			<key>pfm_name</key>
-			<string>mouseDriverMaxSpeed</string>
-			<key>pfm_range_max</key>
-			<integer>32</integer>
-			<key>pfm_range_min</key>
-			<integer>1</integer>
-			<key>pfm_title</key>
-			<string>Maximum speed</string>
-			<key>pfm_type</key>
-			<string>integer</string>
+			<string>boolean</string>
 		</dict>
 		<dict>
 			<key>pfm_default</key>
 			<false/>
 			<key>pfm_description</key>
-			<string>Turns on "Ignore built-in trackpad when mouse or wireless trackpad is present" in the Mouse &amp; Trackpad options</string>
+			<string>Turns on "Beep when a modifier key is set" for Sticky Keys in Keyboard options</string>
 			<key>pfm_name</key>
-			<string>mouseDriverIgnoreTrackpad</string>
+			<string>stickyKeyBeepOnModifier</string>
 			<key>pfm_title</key>
-			<string>Ignore built-in trackpad</string>
+			<string>Beep when a modifier key is set</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Turns on "Display pressed keys on screen" for Sticky Keys in Keyboard options</string>
+			<key>pfm_name</key>
+			<string>stickyKeyShowWindow</string>
+			<key>pfm_title</key>
+			<string>Display pressed keys on screen</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>VoiceOver provides spoken and brailled descriptions of items on the computer screen and provides control of the computer through the user of the keyboard</string>
+			<key>pfm_name</key>
+			<string>voiceOverOnOffKey</string>
+			<key>pfm_title</key>
+			<string>Enable VoiceOver</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Turns on "Invert colors" in Display options</string>
+			<key>pfm_name</key>
+			<string>whiteOnBlack</string>
+			<key>pfm_title</key>
+			<string>Invert colors</string>
 			<key>pfm_type</key>
 			<string>boolean</string>
 		</dict>

@@ -70,6 +70,19 @@ The user level screensaver settings are specific to a user, instead of the devic
 			<string>string</string>
 		</dict>
 		<dict>
+			<key>pfm_description</key>
+			<string>This value describes the issuing organization of the profile, as displayed to the user.</string>
+			<key>pfm_description_reference</key>
+			<string>Optional. A human-readable string containing the name of the organization that provided the profile.
+The payload organization for a payload need not match the payload organization in the enclosing profile.</string>
+			<key>pfm_name</key>
+			<string>PayloadOrganization</string>
+			<key>pfm_title</key>
+			<string>Payload Organization</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
 			<key>pfm_default</key>
 			<string>com.apple.screensaver.user</string>
 			<key>pfm_description</key>
@@ -121,33 +134,6 @@ A profile can consist of payloads with different version numbers. For example, c
 			<string>integer</string>
 		</dict>
 		<dict>
-			<key>pfm_description</key>
-			<string>This value describes the issuing organization of the profile, as displayed to the user.</string>
-			<key>pfm_description_reference</key>
-			<string>Optional. A human-readable string containing the name of the organization that provided the profile.
-The payload organization for a payload need not match the payload organization in the enclosing profile.</string>
-			<key>pfm_name</key>
-			<string>PayloadOrganization</string>
-			<key>pfm_title</key>
-			<string>Payload Organization</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>A full path to the screen saver module to be used.</string>
-			<key>pfm_description_reference</key>
-			<string>Optional. A full path to the screen saver module to be used. Availability: Available in macOS 10.11 and later.</string>
-			<key>pfm_macos_min</key>
-			<string>10.11</string>
-			<key>pfm_name</key>
-			<string>modulePath</string>
-			<key>pfm_title</key>
-			<string>Screensaver path</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
 			<key>pfm_default</key>
 			<integer>300</integer>
 			<key>pfm_description</key>
@@ -173,6 +159,20 @@ Availability: Available in macOS 10.11 and later.</string>
 			<string>always</string>
 			<key>pfm_title</key>
 			<string>Screensaver Module Name</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>A full path to the screen saver module to be used.</string>
+			<key>pfm_description_reference</key>
+			<string>Optional. A full path to the screen saver module to be used. Availability: Available in macOS 10.11 and later.</string>
+			<key>pfm_macos_min</key>
+			<string>10.11</string>
+			<key>pfm_name</key>
+			<string>modulePath</string>
+			<key>pfm_title</key>
+			<string>Screensaver path</string>
 			<key>pfm_type</key>
 			<string>string</string>
 		</dict>

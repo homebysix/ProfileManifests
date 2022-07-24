@@ -103,16 +103,14 @@
 			<string>integer</string>
 		</dict>
 		<dict>
-			<key>pfm_default</key>
-			<false/>
 			<key>pfm_description</key>
-			<string>Lab Mode eases deployment of Particulars in a computer lab or data center.</string>
+			<string>Adds a count of CPU cores to the CPU item. Changing this preference requires a restart of the application/widget to take effect.</string>
 			<key>pfm_documentation_url</key>
 			<string>https://particulars.app/_help/particularshelp/Lab-Mode.html</string>
 			<key>pfm_name</key>
-			<string>labMode</string>
+			<string>coreCount</string>
 			<key>pfm_title</key>
-			<string>Lab Mode</string>
+			<string>Show CPU Core Count</string>
 			<key>pfm_type</key>
 			<string>boolean</string>
 		</dict>
@@ -127,6 +125,60 @@
 			<string>Detail Level</string>
 			<key>pfm_type</key>
 			<string>integer</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Particulars shows the DHCP server address and the length of the DHCP lease. Setting this preference will also show the remaining lease time.</string>
+			<key>pfm_documentation_url</key>
+			<string>https://particulars.app/_help/particularshelp/Lab-Mode.html</string>
+			<key>pfm_name</key>
+			<string>dhcpLeaseRemaining</string>
+			<key>pfm_title</key>
+			<string>Show DHCP Lease Time Remaining</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<integer>0</integer>
+			<key>pfm_description</key>
+			<string>Free/available disk space can be displayed in multiple ways. See documentation URL for options.</string>
+			<key>pfm_documentation_url</key>
+			<string>https://particulars.app/_help/particularshelp/Lab-Mode.html</string>
+			<key>pfm_name</key>
+			<string>diskFreeSpace</string>
+			<key>pfm_range_list</key>
+			<array>
+				<integer>0</integer>
+				<integer>1</integer>
+				<integer>2</integer>
+			</array>
+			<key>pfm_range_list_titles</key>
+			<array>
+				<string>Free</string>
+				<string>All available (including purgeable)</string>
+				<string>Free and purgeable</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Show Disk Free Space</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Lab Mode eases deployment of Particulars in a computer lab or data center.</string>
+			<key>pfm_documentation_url</key>
+			<string>https://particulars.app/_help/particularshelp/Lab-Mode.html</string>
+			<key>pfm_name</key>
+			<string>labMode</string>
+			<key>pfm_title</key>
+			<string>Lab Mode</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
 		</dict>
 		<dict>
 			<key>pfm_default</key>
@@ -153,20 +205,6 @@
 			<string>Label Case</string>
 			<key>pfm_type</key>
 			<string>integer</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<false/>
-			<key>pfm_description</key>
-			<string>Particulars shows the DHCP server address and the length of the DHCP lease. Setting this preference will also show the remaining lease time.</string>
-			<key>pfm_documentation_url</key>
-			<string>https://particulars.app/_help/particularshelp/Lab-Mode.html</string>
-			<key>pfm_name</key>
-			<string>dhcpLeaseRemaining</string>
-			<key>pfm_title</key>
-			<string>Show DHCP Lease Time Remaining</string>
-			<key>pfm_type</key>
-			<string>boolean</string>
 		</dict>
 		<dict>
 			<key>pfm_default</key>
@@ -219,44 +257,6 @@
 			<string>Subnet Mask CIDR Notation</string>
 			<key>pfm_type</key>
 			<string>boolean</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Adds a count of CPU cores to the CPU item. Changing this preference requires a restart of the application/widget to take effect.</string>
-			<key>pfm_documentation_url</key>
-			<string>https://particulars.app/_help/particularshelp/Lab-Mode.html</string>
-			<key>pfm_name</key>
-			<string>coreCount</string>
-			<key>pfm_title</key>
-			<string>Show CPU Core Count</string>
-			<key>pfm_type</key>
-			<string>boolean</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<integer>0</integer>
-			<key>pfm_description</key>
-			<string>Free/available disk space can be displayed in multiple ways. See documentation URL for options.</string>
-			<key>pfm_documentation_url</key>
-			<string>https://particulars.app/_help/particularshelp/Lab-Mode.html</string>
-			<key>pfm_name</key>
-			<string>diskFreeSpace</string>
-			<key>pfm_range_list</key>
-			<array>
-				<integer>0</integer>
-				<integer>1</integer>
-				<integer>2</integer>
-			</array>
-			<key>pfm_range_list_titles</key>
-			<array>
-				<string>Free</string>
-				<string>All available (including purgeable)</string>
-				<string>Free and purgeable</string>
-			</array>
-			<key>pfm_title</key>
-			<string>Show Disk Free Space</string>
-			<key>pfm_type</key>
-			<string>integer</string>
 		</dict>
 	</array>
 	<key>pfm_targets</key>

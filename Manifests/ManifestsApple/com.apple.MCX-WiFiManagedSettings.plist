@@ -63,6 +63,16 @@
 			<string>string</string>
 		</dict>
 		<dict>
+			<key>pfm_description</key>
+			<string>This value describes the issuing organization of the profile, as displayed to the user</string>
+			<key>pfm_name</key>
+			<string>PayloadOrganization</string>
+			<key>pfm_title</key>
+			<string>Payload Organization</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
 			<key>pfm_default</key>
 			<string>com.apple.MCX</string>
 			<key>pfm_description</key>
@@ -107,28 +117,6 @@
 			<string>integer</string>
 		</dict>
 		<dict>
-			<key>pfm_description</key>
-			<string>This value describes the issuing organization of the profile, as displayed to the user</string>
-			<key>pfm_name</key>
-			<string>PayloadOrganization</string>
-			<key>pfm_title</key>
-			<string>Payload Organization</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<false/>
-			<key>pfm_description</key>
-			<string>If true, requires administrator authorization to turn Wi-Fi on or off.</string>
-			<key>pfm_name</key>
-			<string>RequireAdminToTurnAirPortOnOff</string>
-			<key>pfm_title</key>
-			<string>Require Admin Credentials for Wi-Fi Power</string>
-			<key>pfm_type</key>
-			<string>boolean</string>
-		</dict>
-		<dict>
 			<key>pfm_default</key>
 			<false/>
 			<key>pfm_description</key>
@@ -149,6 +137,18 @@
 			<string>RequireAdminForIBSS</string>
 			<key>pfm_title</key>
 			<string>Require Admin Credentials for IBSS</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>If true, requires administrator authorization to turn Wi-Fi on or off.</string>
+			<key>pfm_name</key>
+			<string>RequireAdminToTurnAirPortOnOff</string>
+			<key>pfm_title</key>
+			<string>Require Admin Credentials for Wi-Fi Power</string>
 			<key>pfm_type</key>
 			<string>boolean</string>
 		</dict>

@@ -28,248 +28,6 @@
 	<array>
 		<dict>
 			<key>pfm_default</key>
-			<string>Configures Wi-Fi settings</string>
-			<key>pfm_description</key>
-			<string>Description of the payload</string>
-			<key>pfm_name</key>
-			<string>PayloadDescription</string>
-			<key>pfm_title</key>
-			<string>Payload Description</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>Wi-Fi</string>
-			<key>pfm_description</key>
-			<string>Name of the payload</string>
-			<key>pfm_name</key>
-			<string>PayloadDisplayName</string>
-			<key>pfm_require</key>
-			<string>always</string>
-			<key>pfm_title</key>
-			<string>Payload Display Name</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>com.apple.wifi.managed</string>
-			<key>pfm_description</key>
-			<string>A unique identifier for the payload, dot-delimited.  Usually root PayloadIdentifier+subidentifier</string>
-			<key>pfm_name</key>
-			<string>PayloadIdentifier</string>
-			<key>pfm_require</key>
-			<string>always</string>
-			<key>pfm_title</key>
-			<string>Payload Identifier</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>com.apple.wifi.managed</string>
-			<key>pfm_description</key>
-			<string>The type of the payload, a reverse dns string</string>
-			<key>pfm_name</key>
-			<string>PayloadType</string>
-			<key>pfm_require</key>
-			<string>always</string>
-			<key>pfm_title</key>
-			<string>Payload Type</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string></string>
-			<key>pfm_description</key>
-			<string>Unique identifier for the payload (format 01234567-89AB-CDEF-0123-456789ABCDEF)</string>
-			<key>pfm_format</key>
-			<string>^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$</string>
-			<key>pfm_name</key>
-			<string>PayloadUUID</string>
-			<key>pfm_require</key>
-			<string>always</string>
-			<key>pfm_title</key>
-			<string>Payload UUID</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<integer>1</integer>
-			<key>pfm_description</key>
-			<string>The version of the whole configuration profile.</string>
-			<key>pfm_name</key>
-			<string>PayloadVersion</string>
-			<key>pfm_require</key>
-			<string>always</string>
-			<key>pfm_title</key>
-			<string>Payload Version</string>
-			<key>pfm_type</key>
-			<string>integer</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>This value describes the issuing organization of the profile, as displayed to the user</string>
-			<key>pfm_name</key>
-			<string>PayloadOrganization</string>
-			<key>pfm_title</key>
-			<string>Payload Organization</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Type of network interface on the device.</string>
-			<key>pfm_excluded</key>
-			<true/>
-			<key>pfm_name</key>
-			<string>PFC_InterfaceSelector</string>
-			<key>pfm_range_list</key>
-			<array>
-				<string>BuiltInWireless</string>
-				<string>Hotspot</string>
-				<string>Hotspot2</string>
-			</array>
-			<key>pfm_range_list_titles</key>
-			<array>
-				<string>Wi-Fi</string>
-				<string>Legacy Hotspot</string>
-				<string>Passpoint</string>
-			</array>
-			<key>pfm_require</key>
-			<string>always</string>
-			<key>pfm_title</key>
-			<string>Network Interface</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_conditionals</key>
-			<array>
-				<dict>
-					<key>pfm_require</key>
-					<string>always</string>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_contains_any</key>
-							<array>
-								<string>Hotspot</string>
-								<string>Hotspot2</string>
-							</array>
-							<key>pfm_target</key>
-							<string>PFC_InterfaceSelector</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_default</key>
-			<false/>
-			<key>pfm_description</key>
-			<string>If the network should be treated as a Legacy Hotspot or Passpoint network.</string>
-			<key>pfm_exclude</key>
-			<array>
-				<dict>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_n_contains_any</key>
-							<array>
-								<string>Hotspot</string>
-								<string>Hotspot2</string>
-							</array>
-							<key>pfm_target</key>
-							<string>PFC_InterfaceSelector</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_ios_min</key>
-			<string>7.0</string>
-			<key>pfm_macos_min</key>
-			<string>10.9</string>
-			<key>pfm_name</key>
-			<string>IsHotspot</string>
-			<key>pfm_title</key>
-			<string>Is Hotspot</string>
-			<key>pfm_type</key>
-			<string>boolean</string>
-		</dict>
-		<dict>
-			<key>pfm_conditionals</key>
-			<array>
-				<dict>
-					<key>pfm_require</key>
-					<string>always</string>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_contains_any</key>
-							<array>
-								<string>BuiltInWireless</string>
-								<string>Hotspot</string>
-							</array>
-							<key>pfm_target</key>
-							<string>PFC_InterfaceSelector</string>
-						</dict>
-					</array>
-				</dict>
-				<dict>
-					<key>pfm_require</key>
-					<string>always</string>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_present</key>
-							<false/>
-							<key>pfm_target</key>
-							<string>DomainName</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_description</key>
-			<string>Displayed name of the wireless network</string>
-			<key>pfm_exclude</key>
-			<array>
-				<dict>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_range_list</key>
-							<array>
-								<string>Hotspot2</string>
-							</array>
-							<key>pfm_target</key>
-							<string>PFC_InterfaceSelector</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_name</key>
-			<string>SSID_STR</string>
-			<key>pfm_title</key>
-			<string>Service Set Identifier (SSID)</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<false/>
-			<key>pfm_description</key>
-			<string>Specify whether the network that the device connects to is broadcasting its identity.</string>
-			<key>pfm_name</key>
-			<string>HIDDEN_NETWORK</string>
-			<key>pfm_title</key>
-			<string>Hidden Network</string>
-			<key>pfm_type</key>
-			<string>boolean</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
 			<true/>
 			<key>pfm_description</key>
 			<string>Automatically join the network without notifying users.</string>
@@ -324,308 +82,6 @@
 			<string>Disable MAC Address Randomization</string>
 			<key>pfm_type</key>
 			<string>boolean</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>None</string>
-			<key>pfm_description</key>
-			<string>The type of proxy configuration to use for this wireless connection.</string>
-			<key>pfm_ios_min</key>
-			<string>5.0</string>
-			<key>pfm_name</key>
-			<string>ProxyType</string>
-			<key>pfm_platforms</key>
-			<array>
-				<string>iOS</string>
-				<string>macOS</string>
-			</array>
-			<key>pfm_range_list</key>
-			<array>
-				<string>None</string>
-				<string>Manual</string>
-				<string>Auto</string>
-			</array>
-			<key>pfm_title</key>
-			<string>Proxy Type</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_conditionals</key>
-			<array>
-				<dict>
-					<key>pfm_require</key>
-					<string>always</string>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_range_list</key>
-							<array>
-								<string>Manual</string>
-							</array>
-							<key>pfm_target</key>
-							<string>ProxyType</string>
-						</dict>
-						<dict>
-							<key>pfm_present</key>
-							<true/>
-							<key>pfm_target</key>
-							<string>ProxyType</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_description</key>
-			<string>The hostname of the proxy server.</string>
-			<key>pfm_exclude</key>
-			<array>
-				<dict>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_n_range_list</key>
-							<array>
-								<string>Manual</string>
-							</array>
-							<key>pfm_target</key>
-							<string>ProxyType</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_name</key>
-			<string>ProxyServer</string>
-			<key>pfm_title</key>
-			<string>Proxy Server</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_conditionals</key>
-			<array>
-				<dict>
-					<key>pfm_require</key>
-					<string>always</string>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_range_list</key>
-							<array>
-								<string>Manual</string>
-							</array>
-							<key>pfm_target</key>
-							<string>ProxyType</string>
-						</dict>
-						<dict>
-							<key>pfm_present</key>
-							<true/>
-							<key>pfm_target</key>
-							<string>ProxyType</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_description</key>
-			<string>The port used to connect to the proxy server.</string>
-			<key>pfm_exclude</key>
-			<array>
-				<dict>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_n_range_list</key>
-							<array>
-								<string>Manual</string>
-							</array>
-							<key>pfm_target</key>
-							<string>ProxyType</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_name</key>
-			<string>ProxyServerPort</string>
-			<key>pfm_range_max</key>
-			<integer>65535</integer>
-			<key>pfm_range_min</key>
-			<integer>0</integer>
-			<key>pfm_title</key>
-			<string>Proxy Server Port</string>
-			<key>pfm_type</key>
-			<string>integer</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>The user name for the manual proxy connection.</string>
-			<key>pfm_exclude</key>
-			<array>
-				<dict>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_n_range_list</key>
-							<array>
-								<string>Manual</string>
-							</array>
-							<key>pfm_target</key>
-							<string>ProxyType</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_name</key>
-			<string>ProxyUsername</string>
-			<key>pfm_title</key>
-			<string>Proxy Username</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>The password for the manual proxy connection.</string>
-			<key>pfm_exclude</key>
-			<array>
-				<dict>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_n_range_list</key>
-							<array>
-								<string>Manual</string>
-							</array>
-							<key>pfm_target</key>
-							<string>ProxyType</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_name</key>
-			<string>ProxyPassword</string>
-			<key>pfm_sensitive</key>
-			<true/>
-			<key>pfm_title</key>
-			<string>Proxy Password</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>URL used to receive proxy settings. If no URL is specified, the device uses the web proxy autodiscovery protocol (WPAD) to discover proxies</string>
-			<key>pfm_exclude</key>
-			<array>
-				<dict>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_n_range_list</key>
-							<array>
-								<string>Auto</string>
-							</array>
-							<key>pfm_target</key>
-							<string>ProxyType</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_name</key>
-			<string>ProxyPACURL</string>
-			<key>pfm_title</key>
-			<string>Proxy PAC URL</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<true/>
-			<key>pfm_description</key>
-			<string>Enable to allow direct connection if PAC is unreachable</string>
-			<key>pfm_exclude</key>
-			<array>
-				<dict>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_n_range_list</key>
-							<array>
-								<string>Auto</string>
-							</array>
-							<key>pfm_target</key>
-							<string>ProxyType</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_name</key>
-			<string>ProxyPACFallbackAllowed</string>
-			<key>pfm_title</key>
-			<string>Proxy PAC Fallback</string>
-			<key>pfm_type</key>
-			<string>boolean</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>Any</string>
-			<key>pfm_description</key>
-			<string>Wireless network encryption to use when connecting. The None value is available in iOS 5.0 and later and the WPA2 value is available in iOS 8.0 and later</string>
-			<key>pfm_ios_min</key>
-			<string>4.0</string>
-			<key>pfm_name</key>
-			<string>EncryptionType</string>
-			<key>pfm_platforms</key>
-			<array>
-				<string>iOS</string>
-				<string>macOS</string>
-			</array>
-			<key>pfm_range_list</key>
-			<array>
-				<string>None</string>
-				<string>WEP</string>
-				<string>WPA</string>
-				<string>WPA2</string>
-				<string>WPA3</string>
-				<string>Any</string>
-			</array>
-			<key>pfm_range_list_titles</key>
-			<array>
-				<string>None</string>
-				<string>WEP</string>
-				<string>WPA/WPA2</string>
-				<string>WPA2</string>
-				<string>WPA3</string>
-				<string>Any</string>
-			</array>
-			<key>pfm_require</key>
-			<string>always</string>
-			<key>pfm_title</key>
-			<string>Encryption Type</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Specifies the password for the access point.</string>
-			<key>pfm_exclude</key>
-			<array>
-				<dict>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_present</key>
-							<true/>
-							<key>pfm_target</key>
-							<string>EAPClientConfiguration</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_name</key>
-			<string>Password</string>
-			<key>pfm_sensitive</key>
-			<true/>
-			<key>pfm_title</key>
-			<string>Password</string>
-			<key>pfm_type</key>
-			<string>string</string>
 		</dict>
 		<dict>
 			<key>pfm_conditionals</key>
@@ -748,271 +204,6 @@
 			<string>Domain Name</string>
 			<key>pfm_type</key>
 			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<false/>
-			<key>pfm_description</key>
-			<string>Specify whether to connect to additional Passpoint networks pre-approved by the service provider.</string>
-			<key>pfm_exclude</key>
-			<array>
-				<dict>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_range_list</key>
-							<array>
-								<false/>
-							</array>
-							<key>pfm_target</key>
-							<string>IsHotspot</string>
-						</dict>
-						<dict>
-							<key>pfm_present</key>
-							<false/>
-							<key>pfm_target</key>
-							<string>DomainName</string>
-						</dict>
-						<dict>
-							<key>pfm_n_range_list</key>
-							<array>
-								<string>Hotspot2</string>
-							</array>
-							<key>pfm_target</key>
-							<string>PFC_InterfaceSelector</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_ios_min</key>
-			<string>7.0</string>
-			<key>pfm_macos_min</key>
-			<string>10.9</string>
-			<key>pfm_name</key>
-			<string>ServiceProviderRoamingEnabled</string>
-			<key>pfm_platforms</key>
-			<array>
-				<string>iOS</string>
-				<string>macOS</string>
-			</array>
-			<key>pfm_title</key>
-			<string>Connect to roaming partner Passpoint networks</string>
-			<key>pfm_type</key>
-			<string>boolean</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Enter a series of digits corresponding to one of the service provider's Passpoint network.</string>
-			<key>pfm_exclude</key>
-			<array>
-				<dict>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_range_list</key>
-							<array>
-								<false/>
-							</array>
-							<key>pfm_target</key>
-							<string>IsHotspot</string>
-						</dict>
-						<dict>
-							<key>pfm_present</key>
-							<false/>
-							<key>pfm_target</key>
-							<string>DomainName</string>
-						</dict>
-						<dict>
-							<key>pfm_n_range_list</key>
-							<array>
-								<string>Hotspot2</string>
-							</array>
-							<key>pfm_target</key>
-							<string>PFC_InterfaceSelector</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_ios_min</key>
-			<string>7.0</string>
-			<key>pfm_macos_min</key>
-			<string>10.9</string>
-			<key>pfm_name</key>
-			<string>RoamingConsortiumOIs</string>
-			<key>pfm_platforms</key>
-			<array>
-				<string>iOS</string>
-				<string>macOS</string>
-			</array>
-			<key>pfm_subkeys</key>
-			<array>
-				<dict>
-					<key>pfm_format</key>
-					<string>^([0-9A-Za-z]{6})|([0-9A-Za-z]{9})$</string>
-					<key>pfm_name</key>
-					<string>RoamingConsortiumOI</string>
-					<key>pfm_type</key>
-					<string>string</string>
-				</dict>
-			</array>
-			<key>pfm_title</key>
-			<string>Roaming OIs</string>
-			<key>pfm_type</key>
-			<string>array</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Enter the known NAI realm names.</string>
-			<key>pfm_exclude</key>
-			<array>
-				<dict>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_range_list</key>
-							<array>
-								<false/>
-							</array>
-							<key>pfm_target</key>
-							<string>IsHotspot</string>
-						</dict>
-						<dict>
-							<key>pfm_present</key>
-							<false/>
-							<key>pfm_target</key>
-							<string>DomainName</string>
-						</dict>
-						<dict>
-							<key>pfm_n_range_list</key>
-							<array>
-								<string>Hotspot2</string>
-							</array>
-							<key>pfm_target</key>
-							<string>PFC_InterfaceSelector</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_ios_min</key>
-			<string>7.0</string>
-			<key>pfm_macos_min</key>
-			<string>10.9</string>
-			<key>pfm_name</key>
-			<string>NAIRealmNames</string>
-			<key>pfm_platforms</key>
-			<array>
-				<string>iOS</string>
-				<string>macOS</string>
-			</array>
-			<key>pfm_subkeys</key>
-			<array>
-				<dict>
-					<key>pfm_name</key>
-					<string>NAIRealmName</string>
-					<key>pfm_type</key>
-					<string>string</string>
-				</dict>
-			</array>
-			<key>pfm_title</key>
-			<string>Realm Names</string>
-			<key>pfm_type</key>
-			<string>array</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>HotSpot 2.0 MCC/MNCs.</string>
-			<key>pfm_exclude</key>
-			<array>
-				<dict>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_range_list</key>
-							<array>
-								<false/>
-							</array>
-							<key>pfm_target</key>
-							<string>IsHotspot</string>
-						</dict>
-						<dict>
-							<key>pfm_present</key>
-							<false/>
-							<key>pfm_target</key>
-							<string>DomainName</string>
-						</dict>
-						<dict>
-							<key>pfm_n_range_list</key>
-							<array>
-								<string>Hotspot2</string>
-							</array>
-							<key>pfm_target</key>
-							<string>PFC_InterfaceSelector</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_ios_min</key>
-			<string>7.0</string>
-			<key>pfm_name</key>
-			<string>MCCAndMNCs</string>
-			<key>pfm_platforms</key>
-			<array>
-				<string>iOS</string>
-			</array>
-			<key>pfm_subkeys</key>
-			<array>
-				<dict>
-					<key>pfm_format</key>
-					<string>^[0-9]{6}$</string>
-					<key>pfm_name</key>
-					<string>MCCAndMNC</string>
-					<key>pfm_type</key>
-					<string>string</string>
-				</dict>
-			</array>
-			<key>pfm_title</key>
-			<string>MCC/MNCs</string>
-			<key>pfm_type</key>
-			<string>array</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Select "Login Window" to authenticate the Mac to the network when the user logs in.</string>
-			<key>pfm_name</key>
-			<string>SetupModes</string>
-			<key>pfm_platforms</key>
-			<array>
-				<string>macOS</string>
-			</array>
-			<key>pfm_subkeys</key>
-			<array>
-				<dict>
-					<key>pfm_description</key>
-					<string></string>
-					<key>pfm_name</key>
-					<string>SetupMode</string>
-					<key>pfm_range_list</key>
-					<array>
-						<string>System</string>
-						<string>Loginwindow</string>
-					</array>
-					<key>pfm_range_list_titles</key>
-					<array>
-						<string>System</string>
-						<string>Login Window</string>
-					</array>
-					<key>pfm_title</key>
-					<string>Setup Mode</string>
-					<key>pfm_type</key>
-					<string>string</string>
-				</dict>
-			</array>
-			<key>pfm_title</key>
-			<string>EAP Setup Modes</string>
-			<key>pfm_type</key>
-			<string>array</string>
-			<key>pfm_type_input</key>
-			<string>boolean</string>
 		</dict>
 		<dict>
 			<key>pfm_description</key>
@@ -1555,6 +746,686 @@
 			<string>dictionary</string>
 		</dict>
 		<dict>
+			<key>pfm_default</key>
+			<string>Any</string>
+			<key>pfm_description</key>
+			<string>Wireless network encryption to use when connecting. The None value is available in iOS 5.0 and later and the WPA2 value is available in iOS 8.0 and later</string>
+			<key>pfm_ios_min</key>
+			<string>4.0</string>
+			<key>pfm_name</key>
+			<string>EncryptionType</string>
+			<key>pfm_platforms</key>
+			<array>
+				<string>iOS</string>
+				<string>macOS</string>
+			</array>
+			<key>pfm_range_list</key>
+			<array>
+				<string>None</string>
+				<string>WEP</string>
+				<string>WPA</string>
+				<string>WPA2</string>
+				<string>WPA3</string>
+				<string>Any</string>
+			</array>
+			<key>pfm_range_list_titles</key>
+			<array>
+				<string>None</string>
+				<string>WEP</string>
+				<string>WPA/WPA2</string>
+				<string>WPA2</string>
+				<string>WPA3</string>
+				<string>Any</string>
+			</array>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Encryption Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Specify whether the network that the device connects to is broadcasting its identity.</string>
+			<key>pfm_name</key>
+			<string>HIDDEN_NETWORK</string>
+			<key>pfm_title</key>
+			<string>Hidden Network</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The wireless interface to use</string>
+			<key>pfm_name</key>
+			<string>Interface</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>AnyEthernet</string>
+				<string>FirstEthernet</string>
+				<string>FirstActiveEthernet</string>
+				<string>SecondEthernet</string>
+				<string>SecondActiveEthernet</string>
+				<string>ThirdEthernet</string>
+				<string>ThirdActiveEthernet</string>
+			</array>
+			<key>pfm_range_list_titles</key>
+			<array>
+				<string>Any Ethernet</string>
+				<string>First Ethernet</string>
+				<string>First Active Ethernet</string>
+				<string>Second Ethernet</string>
+				<string>Second Active Ethernet</string>
+				<string>Third Ethernet</string>
+				<string>Third Active Ethernet</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Interface</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_conditionals</key>
+			<array>
+				<dict>
+					<key>pfm_require</key>
+					<string>always</string>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_contains_any</key>
+							<array>
+								<string>Hotspot</string>
+								<string>Hotspot2</string>
+							</array>
+							<key>pfm_target</key>
+							<string>PFC_InterfaceSelector</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>If the network should be treated as a Legacy Hotspot or Passpoint network.</string>
+			<key>pfm_exclude</key>
+			<array>
+				<dict>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_n_contains_any</key>
+							<array>
+								<string>Hotspot</string>
+								<string>Hotspot2</string>
+							</array>
+							<key>pfm_target</key>
+							<string>PFC_InterfaceSelector</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_ios_min</key>
+			<string>7.0</string>
+			<key>pfm_macos_min</key>
+			<string>10.9</string>
+			<key>pfm_name</key>
+			<string>IsHotspot</string>
+			<key>pfm_title</key>
+			<string>Is Hotspot</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>HotSpot 2.0 MCC/MNCs.</string>
+			<key>pfm_exclude</key>
+			<array>
+				<dict>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_range_list</key>
+							<array>
+								<false/>
+							</array>
+							<key>pfm_target</key>
+							<string>IsHotspot</string>
+						</dict>
+						<dict>
+							<key>pfm_present</key>
+							<false/>
+							<key>pfm_target</key>
+							<string>DomainName</string>
+						</dict>
+						<dict>
+							<key>pfm_n_range_list</key>
+							<array>
+								<string>Hotspot2</string>
+							</array>
+							<key>pfm_target</key>
+							<string>PFC_InterfaceSelector</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_ios_min</key>
+			<string>7.0</string>
+			<key>pfm_name</key>
+			<string>MCCAndMNCs</string>
+			<key>pfm_platforms</key>
+			<array>
+				<string>iOS</string>
+			</array>
+			<key>pfm_subkeys</key>
+			<array>
+				<dict>
+					<key>pfm_format</key>
+					<string>^[0-9]{6}$</string>
+					<key>pfm_name</key>
+					<string>MCCAndMNC</string>
+					<key>pfm_type</key>
+					<string>string</string>
+				</dict>
+			</array>
+			<key>pfm_title</key>
+			<string>MCC/MNCs</string>
+			<key>pfm_type</key>
+			<string>array</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Enter the known NAI realm names.</string>
+			<key>pfm_exclude</key>
+			<array>
+				<dict>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_range_list</key>
+							<array>
+								<false/>
+							</array>
+							<key>pfm_target</key>
+							<string>IsHotspot</string>
+						</dict>
+						<dict>
+							<key>pfm_present</key>
+							<false/>
+							<key>pfm_target</key>
+							<string>DomainName</string>
+						</dict>
+						<dict>
+							<key>pfm_n_range_list</key>
+							<array>
+								<string>Hotspot2</string>
+							</array>
+							<key>pfm_target</key>
+							<string>PFC_InterfaceSelector</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_ios_min</key>
+			<string>7.0</string>
+			<key>pfm_macos_min</key>
+			<string>10.9</string>
+			<key>pfm_name</key>
+			<string>NAIRealmNames</string>
+			<key>pfm_platforms</key>
+			<array>
+				<string>iOS</string>
+				<string>macOS</string>
+			</array>
+			<key>pfm_subkeys</key>
+			<array>
+				<dict>
+					<key>pfm_name</key>
+					<string>NAIRealmName</string>
+					<key>pfm_type</key>
+					<string>string</string>
+				</dict>
+			</array>
+			<key>pfm_title</key>
+			<string>Realm Names</string>
+			<key>pfm_type</key>
+			<string>array</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Type of network interface on the device.</string>
+			<key>pfm_excluded</key>
+			<true/>
+			<key>pfm_name</key>
+			<string>PFC_InterfaceSelector</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>BuiltInWireless</string>
+				<string>Hotspot</string>
+				<string>Hotspot2</string>
+			</array>
+			<key>pfm_range_list_titles</key>
+			<array>
+				<string>Wi-Fi</string>
+				<string>Legacy Hotspot</string>
+				<string>Passpoint</string>
+			</array>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Network Interface</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Specifies the password for the access point.</string>
+			<key>pfm_exclude</key>
+			<array>
+				<dict>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_present</key>
+							<true/>
+							<key>pfm_target</key>
+							<string>EAPClientConfiguration</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_name</key>
+			<string>Password</string>
+			<key>pfm_sensitive</key>
+			<true/>
+			<key>pfm_title</key>
+			<string>Password</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_conditionals</key>
+			<array>
+				<dict>
+					<key>pfm_require</key>
+					<string>always</string>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_contains_any</key>
+							<array>
+								<integer>13</integer>
+							</array>
+							<key>pfm_target</key>
+							<string>EAPClientConfiguration.AcceptEAPTypes</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_description</key>
+			<string>UUID of the certificate payload containing an identity used as the client credential.</string>
+			<key>pfm_exclude</key>
+			<array>
+				<dict>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_n_contains_any</key>
+							<array>
+								<integer>13</integer>
+								<integer>21</integer>
+								<integer>25</integer>
+								<integer>43</integer>
+							</array>
+							<key>pfm_target</key>
+							<string>EAPClientConfiguration.AcceptEAPTypes</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_format</key>
+			<string>^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$</string>
+			<key>pfm_name</key>
+			<string>PayloadCertificateUUID</string>
+			<key>pfm_title</key>
+			<string>Certificate UUID</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Configures Wi-Fi settings</string>
+			<key>pfm_description</key>
+			<string>Description of the payload</string>
+			<key>pfm_name</key>
+			<string>PayloadDescription</string>
+			<key>pfm_title</key>
+			<string>Payload Description</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Wi-Fi</string>
+			<key>pfm_description</key>
+			<string>Name of the payload</string>
+			<key>pfm_name</key>
+			<string>PayloadDisplayName</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Display Name</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>com.apple.wifi.managed</string>
+			<key>pfm_description</key>
+			<string>A unique identifier for the payload, dot-delimited.  Usually root PayloadIdentifier+subidentifier</string>
+			<key>pfm_name</key>
+			<string>PayloadIdentifier</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Identifier</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>This value describes the issuing organization of the profile, as displayed to the user</string>
+			<key>pfm_name</key>
+			<string>PayloadOrganization</string>
+			<key>pfm_title</key>
+			<string>Payload Organization</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>com.apple.wifi.managed</string>
+			<key>pfm_description</key>
+			<string>The type of the payload, a reverse dns string</string>
+			<key>pfm_name</key>
+			<string>PayloadType</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string></string>
+			<key>pfm_description</key>
+			<string>Unique identifier for the payload (format 01234567-89AB-CDEF-0123-456789ABCDEF)</string>
+			<key>pfm_format</key>
+			<string>^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$</string>
+			<key>pfm_name</key>
+			<string>PayloadUUID</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload UUID</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<integer>1</integer>
+			<key>pfm_description</key>
+			<string>The version of the whole configuration profile.</string>
+			<key>pfm_name</key>
+			<string>PayloadVersion</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Version</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<true/>
+			<key>pfm_description</key>
+			<string>Enable to allow direct connection if PAC is unreachable</string>
+			<key>pfm_exclude</key>
+			<array>
+				<dict>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_n_range_list</key>
+							<array>
+								<string>Auto</string>
+							</array>
+							<key>pfm_target</key>
+							<string>ProxyType</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_name</key>
+			<string>ProxyPACFallbackAllowed</string>
+			<key>pfm_title</key>
+			<string>Proxy PAC Fallback</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>URL used to receive proxy settings. If no URL is specified, the device uses the web proxy autodiscovery protocol (WPAD) to discover proxies</string>
+			<key>pfm_exclude</key>
+			<array>
+				<dict>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_n_range_list</key>
+							<array>
+								<string>Auto</string>
+							</array>
+							<key>pfm_target</key>
+							<string>ProxyType</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_name</key>
+			<string>ProxyPACURL</string>
+			<key>pfm_title</key>
+			<string>Proxy PAC URL</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The password for the manual proxy connection.</string>
+			<key>pfm_exclude</key>
+			<array>
+				<dict>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_n_range_list</key>
+							<array>
+								<string>Manual</string>
+							</array>
+							<key>pfm_target</key>
+							<string>ProxyType</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_name</key>
+			<string>ProxyPassword</string>
+			<key>pfm_sensitive</key>
+			<true/>
+			<key>pfm_title</key>
+			<string>Proxy Password</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_conditionals</key>
+			<array>
+				<dict>
+					<key>pfm_require</key>
+					<string>always</string>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_range_list</key>
+							<array>
+								<string>Manual</string>
+							</array>
+							<key>pfm_target</key>
+							<string>ProxyType</string>
+						</dict>
+						<dict>
+							<key>pfm_present</key>
+							<true/>
+							<key>pfm_target</key>
+							<string>ProxyType</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_description</key>
+			<string>The hostname of the proxy server.</string>
+			<key>pfm_exclude</key>
+			<array>
+				<dict>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_n_range_list</key>
+							<array>
+								<string>Manual</string>
+							</array>
+							<key>pfm_target</key>
+							<string>ProxyType</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_name</key>
+			<string>ProxyServer</string>
+			<key>pfm_title</key>
+			<string>Proxy Server</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_conditionals</key>
+			<array>
+				<dict>
+					<key>pfm_require</key>
+					<string>always</string>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_range_list</key>
+							<array>
+								<string>Manual</string>
+							</array>
+							<key>pfm_target</key>
+							<string>ProxyType</string>
+						</dict>
+						<dict>
+							<key>pfm_present</key>
+							<true/>
+							<key>pfm_target</key>
+							<string>ProxyType</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_description</key>
+			<string>The port used to connect to the proxy server.</string>
+			<key>pfm_exclude</key>
+			<array>
+				<dict>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_n_range_list</key>
+							<array>
+								<string>Manual</string>
+							</array>
+							<key>pfm_target</key>
+							<string>ProxyType</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_name</key>
+			<string>ProxyServerPort</string>
+			<key>pfm_range_max</key>
+			<integer>65535</integer>
+			<key>pfm_range_min</key>
+			<integer>0</integer>
+			<key>pfm_title</key>
+			<string>Proxy Server Port</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>None</string>
+			<key>pfm_description</key>
+			<string>The type of proxy configuration to use for this wireless connection.</string>
+			<key>pfm_ios_min</key>
+			<string>5.0</string>
+			<key>pfm_name</key>
+			<string>ProxyType</string>
+			<key>pfm_platforms</key>
+			<array>
+				<string>iOS</string>
+				<string>macOS</string>
+			</array>
+			<key>pfm_range_list</key>
+			<array>
+				<string>None</string>
+				<string>Manual</string>
+				<string>Auto</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Proxy Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>The user name for the manual proxy connection.</string>
+			<key>pfm_exclude</key>
+			<array>
+				<dict>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_n_range_list</key>
+							<array>
+								<string>Manual</string>
+							</array>
+							<key>pfm_target</key>
+							<string>ProxyType</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_name</key>
+			<string>ProxyUsername</string>
+			<key>pfm_title</key>
+			<string>Proxy Username</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
 			<key>pfm_description</key>
 			<string>Restrict fast lane QoS marking.</string>
 			<key>pfm_ios_min</key>
@@ -1647,6 +1518,66 @@
 			<string>dictionary</string>
 		</dict>
 		<dict>
+			<key>pfm_description</key>
+			<string>Enter a series of digits corresponding to one of the service provider's Passpoint network.</string>
+			<key>pfm_exclude</key>
+			<array>
+				<dict>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_range_list</key>
+							<array>
+								<false/>
+							</array>
+							<key>pfm_target</key>
+							<string>IsHotspot</string>
+						</dict>
+						<dict>
+							<key>pfm_present</key>
+							<false/>
+							<key>pfm_target</key>
+							<string>DomainName</string>
+						</dict>
+						<dict>
+							<key>pfm_n_range_list</key>
+							<array>
+								<string>Hotspot2</string>
+							</array>
+							<key>pfm_target</key>
+							<string>PFC_InterfaceSelector</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_ios_min</key>
+			<string>7.0</string>
+			<key>pfm_macos_min</key>
+			<string>10.9</string>
+			<key>pfm_name</key>
+			<string>RoamingConsortiumOIs</string>
+			<key>pfm_platforms</key>
+			<array>
+				<string>iOS</string>
+				<string>macOS</string>
+			</array>
+			<key>pfm_subkeys</key>
+			<array>
+				<dict>
+					<key>pfm_format</key>
+					<string>^([0-9A-Za-z]{6})|([0-9A-Za-z]{9})$</string>
+					<key>pfm_name</key>
+					<string>RoamingConsortiumOI</string>
+					<key>pfm_type</key>
+					<string>string</string>
+				</dict>
+			</array>
+			<key>pfm_title</key>
+			<string>Roaming OIs</string>
+			<key>pfm_type</key>
+			<string>array</string>
+		</dict>
+		<dict>
 			<key>pfm_conditionals</key>
 			<array>
 				<dict>
@@ -1657,43 +1588,142 @@
 						<dict>
 							<key>pfm_contains_any</key>
 							<array>
-								<integer>13</integer>
+								<string>BuiltInWireless</string>
+								<string>Hotspot</string>
 							</array>
 							<key>pfm_target</key>
-							<string>EAPClientConfiguration.AcceptEAPTypes</string>
+							<string>PFC_InterfaceSelector</string>
+						</dict>
+					</array>
+				</dict>
+				<dict>
+					<key>pfm_require</key>
+					<string>always</string>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_present</key>
+							<false/>
+							<key>pfm_target</key>
+							<string>DomainName</string>
 						</dict>
 					</array>
 				</dict>
 			</array>
 			<key>pfm_description</key>
-			<string>UUID of the certificate payload containing an identity used as the client credential.</string>
+			<string>Displayed name of the wireless network</string>
 			<key>pfm_exclude</key>
 			<array>
 				<dict>
 					<key>pfm_target_conditions</key>
 					<array>
 						<dict>
-							<key>pfm_n_contains_any</key>
+							<key>pfm_range_list</key>
 							<array>
-								<integer>13</integer>
-								<integer>21</integer>
-								<integer>25</integer>
-								<integer>43</integer>
+								<string>Hotspot2</string>
 							</array>
 							<key>pfm_target</key>
-							<string>EAPClientConfiguration.AcceptEAPTypes</string>
+							<string>PFC_InterfaceSelector</string>
 						</dict>
 					</array>
 				</dict>
 			</array>
-			<key>pfm_format</key>
-			<string>^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$</string>
 			<key>pfm_name</key>
-			<string>PayloadCertificateUUID</string>
+			<string>SSID_STR</string>
 			<key>pfm_title</key>
-			<string>Certificate UUID</string>
+			<string>Service Set Identifier (SSID)</string>
 			<key>pfm_type</key>
 			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Specify whether to connect to additional Passpoint networks pre-approved by the service provider.</string>
+			<key>pfm_exclude</key>
+			<array>
+				<dict>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_range_list</key>
+							<array>
+								<false/>
+							</array>
+							<key>pfm_target</key>
+							<string>IsHotspot</string>
+						</dict>
+						<dict>
+							<key>pfm_present</key>
+							<false/>
+							<key>pfm_target</key>
+							<string>DomainName</string>
+						</dict>
+						<dict>
+							<key>pfm_n_range_list</key>
+							<array>
+								<string>Hotspot2</string>
+							</array>
+							<key>pfm_target</key>
+							<string>PFC_InterfaceSelector</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_ios_min</key>
+			<string>7.0</string>
+			<key>pfm_macos_min</key>
+			<string>10.9</string>
+			<key>pfm_name</key>
+			<string>ServiceProviderRoamingEnabled</string>
+			<key>pfm_platforms</key>
+			<array>
+				<string>iOS</string>
+				<string>macOS</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Connect to roaming partner Passpoint networks</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Select "Login Window" to authenticate the Mac to the network when the user logs in.</string>
+			<key>pfm_name</key>
+			<string>SetupModes</string>
+			<key>pfm_platforms</key>
+			<array>
+				<string>macOS</string>
+			</array>
+			<key>pfm_subkeys</key>
+			<array>
+				<dict>
+					<key>pfm_description</key>
+					<string></string>
+					<key>pfm_name</key>
+					<string>SetupMode</string>
+					<key>pfm_range_list</key>
+					<array>
+						<string>System</string>
+						<string>Loginwindow</string>
+					</array>
+					<key>pfm_range_list_titles</key>
+					<array>
+						<string>System</string>
+						<string>Login Window</string>
+					</array>
+					<key>pfm_title</key>
+					<string>Setup Mode</string>
+					<key>pfm_type</key>
+					<string>string</string>
+				</dict>
+			</array>
+			<key>pfm_title</key>
+			<string>EAP Setup Modes</string>
+			<key>pfm_type</key>
+			<string>array</string>
+			<key>pfm_type_input</key>
+			<string>boolean</string>
 		</dict>
 		<dict>
 			<key>pfm_default</key>
@@ -1708,36 +1738,6 @@
 			<string>Certificate Required</string>
 			<key>pfm_type</key>
 			<string>boolean</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>The wireless interface to use</string>
-			<key>pfm_name</key>
-			<string>Interface</string>
-			<key>pfm_range_list</key>
-			<array>
-				<string>AnyEthernet</string>
-				<string>FirstEthernet</string>
-				<string>FirstActiveEthernet</string>
-				<string>SecondEthernet</string>
-				<string>SecondActiveEthernet</string>
-				<string>ThirdEthernet</string>
-				<string>ThirdActiveEthernet</string>
-			</array>
-			<key>pfm_range_list_titles</key>
-			<array>
-				<string>Any Ethernet</string>
-				<string>First Ethernet</string>
-				<string>First Active Ethernet</string>
-				<string>Second Ethernet</string>
-				<string>Second Active Ethernet</string>
-				<string>Third Ethernet</string>
-				<string>Third Active Ethernet</string>
-			</array>
-			<key>pfm_title</key>
-			<string>Interface</string>
-			<key>pfm_type</key>
-			<string>string</string>
 		</dict>
 	</array>
 	<key>pfm_targets</key>

@@ -583,35 +583,6 @@ Off: your device is not protected against this type of threat and nothing is log
 			<key>pfm_description_reference</key>
 			<string>Manage the preferences for the user interface of Microsoft Defender ATP for Mac.</string>
 			<key>pfm_documentation_url</key>
-			<string>https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/mac-preferences#user-interface-preferences</string>
-			<key>pfm_name</key>
-			<string>userInterface</string>
-			<key>pfm_subkeys</key>
-			<array>
-				<dict>
-					<key>pfm_default</key>
-					<false/>
-					<key>pfm_description_reference</key>
-					<string>Specify whether to show or hide the status menu icon in the top-right corner of the screen.</string>
-					<key>pfm_documentation_url</key>
-					<string>https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/mac-preferences#show--hide-status-menu-icon</string>
-					<key>pfm_name</key>
-					<string>hideStatusMenuIcon</string>
-					<key>pfm_title</key>
-					<string>Show / hide status menu icon</string>
-					<key>pfm_type</key>
-					<string>boolean</string>
-				</dict>
-			</array>
-			<key>pfm_title</key>
-			<string>User Interface Preferences</string>
-			<key>pfm_type</key>
-			<string>dictionary</string>
-		</dict>
-		<dict>
-			<key>pfm_description_reference</key>
-			<string>Manage the preferences for the user interface of Microsoft Defender ATP for Mac.</string>
-			<key>pfm_documentation_url</key>
 			<string>https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/mac-preferences#endpoint-detection-and-response-preferences</string>
 			<key>pfm_name</key>
 			<string>edr</string>
@@ -690,6 +661,35 @@ Off: your device is not protected against this type of threat and nothing is log
 			</array>
 			<key>pfm_title</key>
 			<string>Endpoint Detection and Response Preferences</string>
+			<key>pfm_type</key>
+			<string>dictionary</string>
+		</dict>
+		<dict>
+			<key>pfm_description_reference</key>
+			<string>Manage the preferences for the user interface of Microsoft Defender ATP for Mac.</string>
+			<key>pfm_documentation_url</key>
+			<string>https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/mac-preferences#user-interface-preferences</string>
+			<key>pfm_name</key>
+			<string>userInterface</string>
+			<key>pfm_subkeys</key>
+			<array>
+				<dict>
+					<key>pfm_default</key>
+					<false/>
+					<key>pfm_description_reference</key>
+					<string>Specify whether to show or hide the status menu icon in the top-right corner of the screen.</string>
+					<key>pfm_documentation_url</key>
+					<string>https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/mac-preferences#show--hide-status-menu-icon</string>
+					<key>pfm_name</key>
+					<string>hideStatusMenuIcon</string>
+					<key>pfm_title</key>
+					<string>Show / hide status menu icon</string>
+					<key>pfm_type</key>
+					<string>boolean</string>
+				</dict>
+			</array>
+			<key>pfm_title</key>
+			<string>User Interface Preferences</string>
 			<key>pfm_type</key>
 			<string>dictionary</string>
 		</dict>

@@ -23,101 +23,376 @@
 	<key>pfm_subkeys</key>
 	<array>
 		<dict>
-			<key>pfm_default</key>
-			<string>SupportApp by Root3</string>
 			<key>pfm_description</key>
-			<string>Name of the payload.</string>
-			<key>pfm_description_reference</key>
-			<string>A human-readable name for the profile payload. This name is displayed on the Detail screen. It does not have to be unique.</string>
+			<string>Custom color in HEX for all symbols. Leave empty to use macOS Accent Color.</string>
 			<key>pfm_name</key>
-			<string>PayloadDisplayName</string>
-			<key>pfm_require</key>
-			<string>always</string>
+			<string>CustomColor</string>
+			<key>pfm_note</key>
+			<string>Root3 recommends to not to use a very light color as text may become hard to read.</string>
 			<key>pfm_title</key>
-			<string>Payload Display Name</string>
+			<string>macOS Accent Color</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>#8cc63f</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Custom color in HEX for all symbols in Dark Mode. Leave empty to use macOS Accent Color or CustomColor if specified.</string>
+			<key>pfm_name</key>
+			<string>CustomColorDarkMode</string>
+			<key>pfm_note</key>
+			<string>Root3 recommends to not to use a very dark color as text may become hard to read.</string>
+			<key>pfm_title</key>
+			<string>macOS Dark Mode Accent Color</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>#8cc63f</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Please contact IT</string>
+			<key>pfm_description</key>
+			<string>Shown when clicking an action that results in an error.</string>
+			<key>pfm_name</key>
+			<string>ErrorMessage</string>
+			<key>pfm_title</key>
+			<string>Error Message</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_conditionals</key>
+			<array>
+				<dict>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_present</key>
+							<true/>
+							<key>pfm_target</key>
+							<string>FirstRowTypeLeft</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_default</key>
+			<string>com.apple.ScreenSharing</string>
+			<key>pfm_description</key>
+			<string>The Bundle Identifier of the App or URL that should be opened, command or script to be run.</string>
+			<key>pfm_name</key>
+			<string>FirstRowLinkLeft</string>
+			<key>pfm_note</key>
+			<string>App: Bundle Identifier of the app
+URL: Link to a webpage or other links that would normaly work like PROTOCOL://URL
+Command: Zsh command or path to a script. Be aware that this will be executed as the user and therefore has its limitations</string>
+			<key>pfm_title</key>
+			<string>First Row Left Link</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_conditionals</key>
+			<array>
+				<dict>
+					<key>pfm_target_conditions</key>
+					<array>
+						<dict>
+							<key>pfm_present</key>
+							<true/>
+							<key>pfm_target</key>
+							<string>FirstRowTypeRight</string>
+						</dict>
+					</array>
+				</dict>
+			</array>
+			<key>pfm_default</key>
+			<string>com.apple.ScreenSharing</string>
+			<key>pfm_description</key>
+			<string>The Bundle Identifier of the App or URL that should be opened, command or script to be run.</string>
+			<key>pfm_name</key>
+			<string>FirstRowLinkRight</string>
+			<key>pfm_note</key>
+			<string>App: Bundle Identifier of the app
+URL: Link to a webpage or other links that would normaly work like PROTOCOL://URL
+Command: Zsh command or path to a script. Be aware that this will be executed as the user and therefore has its limitations</string>
+			<key>pfm_title</key>
+			<string>First Row Right Link</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.</string>
+			<key>pfm_name</key>
+			<string>FirstRowSubtitleLeft</string>
+			<key>pfm_title</key>
+			<string>First Row Left Subtitle</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.</string>
+			<key>pfm_name</key>
+			<string>FirstRowSubtitleRight</string>
+			<key>pfm_title</key>
+			<string>First Row Right Subtitle</string>
 			<key>pfm_type</key>
 			<string>string</string>
 		</dict>
 		<dict>
 			<key>pfm_default</key>
-			<string>nl.root3.support</string>
+			<string>cursorarrow</string>
 			<key>pfm_description</key>
-			<string>A unique identifier for the payload, dot-delimited.  Usually root PayloadIdentifier+subidentifier</string>
-			<key>pfm_description_reference</key>
-			<string>A reverse-DNS-style identifier for the specific payload. It is usually the same identifier as the root-level PayloadIdentifier value with an additional component appended.</string>
+			<string>The SF Symbol shown in the button.</string>
 			<key>pfm_name</key>
-			<string>PayloadIdentifier</string>
-			<key>pfm_require</key>
-			<string>always</string>
+			<string>FirstRowSymbolLeft</string>
+			<key>pfm_note</key>
+			<string>For more info on how to use SF Symbols, checkout https://github.com/root3nl/SupportApp/#how-to-use-sf-symbols</string>
 			<key>pfm_title</key>
-			<string>Payload Identifier</string>
+			<string>First Row Left Symbol</string>
 			<key>pfm_type</key>
 			<string>string</string>
 		</dict>
 		<dict>
 			<key>pfm_default</key>
-			<string>nl.root3.support</string>
+			<string>cart.fill</string>
 			<key>pfm_description</key>
-			<string>The type of the payload, a reverse dns string.</string>
-			<key>pfm_description_reference</key>
-			<string>The payload type.</string>
+			<string>The SF Symbol shown in the button.</string>
 			<key>pfm_name</key>
-			<string>PayloadType</string>
-			<key>pfm_require</key>
-			<string>always</string>
+			<string>FirstRowSymbolRight</string>
+			<key>pfm_note</key>
+			<string>For more info on how to use SF Symbols, checkout https://github.com/root3nl/SupportApp/#how-to-use-sf-symbols</string>
 			<key>pfm_title</key>
-			<string>Payload Type</string>
+			<string>First Row Right Symbol</string>
 			<key>pfm_type</key>
 			<string>string</string>
 		</dict>
 		<dict>
 			<key>pfm_default</key>
-			<string></string>
+			<string>Remote Support</string>
 			<key>pfm_description</key>
-			<string>Unique identifier for the payload (format 01234567-89AB-CDEF-0123-456789ABCDEF)</string>
-			<key>pfm_description_reference</key>
-			<string>A globally unique identifier for the payload. The actual content is unimportant, but it must be globally unique. In macOS, you can use uuidgen to generate reasonable UUIDs.</string>
-			<key>pfm_format</key>
-			<string>^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$</string>
+			<string>The text shown in the button label.</string>
 			<key>pfm_name</key>
-			<string>PayloadUUID</string>
-			<key>pfm_require</key>
-			<string>always</string>
+			<string>FirstRowTitleLeft</string>
 			<key>pfm_title</key>
-			<string>Payload UUID</string>
+			<string>First Row Left Title</string>
 			<key>pfm_type</key>
 			<string>string</string>
 		</dict>
 		<dict>
 			<key>pfm_default</key>
-			<integer>1</integer>
+			<string>Company Store</string>
 			<key>pfm_description</key>
-			<string>The version of the whole configuration profile.</string>
-			<key>pfm_description_reference</key>
-			<string>The version number of the individual payload.
-A profile can consist of payloads with different version numbers. For example, changes to the VPN software in iOS might introduce a new payload version to support additional features, but Mail payload versions would not necessarily change in the same release.</string>
+			<string>The text shown in the button label.</string>
 			<key>pfm_name</key>
-			<string>PayloadVersion</string>
-			<key>pfm_require</key>
-			<string>always</string>
+			<string>FirstRowTitleRight</string>
 			<key>pfm_title</key>
-			<string>Payload Version</string>
+			<string>First Row Right Title</string>
 			<key>pfm_type</key>
-			<string>integer</string>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.</string>
+			<key>pfm_name</key>
+			<string>FirstRowTypeLeft</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>App</string>
+				<string>Command</string>
+				<string>URL</string>
+			</array>
+			<key>pfm_title</key>
+			<string>First Row Left Link Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.</string>
+			<key>pfm_name</key>
+			<string>FirstRowTypeRight</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>App</string>
+				<string>Command</string>
+				<string>URL</string>
+			</array>
+			<key>pfm_title</key>
+			<string>First Row Right Link Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
 		</dict>
 		<dict>
 			<key>pfm_default</key>
-			<string>SupportApp by Root3 settings</string>
+			<false/>
 			<key>pfm_description</key>
-			<string>Description of the payload.</string>
-			<key>pfm_description_reference</key>
-			<string>Optional. A human-readable description of this payload. This description is shown on the Detail screen.</string>
+			<string>Hides the first row of configurable items.</string>
 			<key>pfm_name</key>
-			<string>PayloadDescription</string>
+			<string>HideFirstRow</string>
 			<key>pfm_title</key>
-			<string>Payload Description</string>
+			<string>Hide First Row</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Hides the second row of configurable items.</string>
+			<key>pfm_name</key>
+			<string>HideSecondRow</string>
+			<key>pfm_title</key>
+			<string>Hide Second Row</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Storage</string>
+			<key>pfm_description</key>
+			<string>Info item shown in the second row right.</string>
+			<key>pfm_name</key>
+			<string>InfoItemFour</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>ComputerName</string>
+				<string>MacOSVersion</string>
+				<string>Network</string>
+				<string>Password</string>
+				<string>Storage</string>
+				<string>Uptime</string>
+			</array>
+			<key>pfm_range_list_titles</key>
+			<array>
+				<string>Computer Name</string>
+				<string>macOS Version</string>
+				<string>Network</string>
+				<string>Password</string>
+				<string>Storage</string>
+				<string>Uptime</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Info Item 4</string>
 			<key>pfm_type</key>
 			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>ComputerName</string>
+			<key>pfm_description</key>
+			<string>Info item shown in the upper left corner.</string>
+			<key>pfm_name</key>
+			<string>InfoItemOne</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>ComputerName</string>
+				<string>MacOSVersion</string>
+				<string>Network</string>
+				<string>Password</string>
+				<string>Storage</string>
+				<string>Uptime</string>
+			</array>
+			<key>pfm_range_list_titles</key>
+			<array>
+				<string>Computer Name</string>
+				<string>macOS Version</string>
+				<string>Network</string>
+				<string>Password</string>
+				<string>Storage</string>
+				<string>Uptime</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Info Item 1</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Uptime</string>
+			<key>pfm_description</key>
+			<string>Info item shown in the second row left.</string>
+			<key>pfm_name</key>
+			<string>InfoItemThree</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>ComputerName</string>
+				<string>MacOSVersion</string>
+				<string>Network</string>
+				<string>Password</string>
+				<string>Storage</string>
+				<string>Uptime</string>
+			</array>
+			<key>pfm_range_list_titles</key>
+			<array>
+				<string>Computer Name</string>
+				<string>macOS Version</string>
+				<string>Network</string>
+				<string>Password</string>
+				<string>Storage</string>
+				<string>Uptime</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Info Item 3</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>MacOSVersion</string>
+			<key>pfm_description</key>
+			<string>Info item shown in the upper right corner.</string>
+			<key>pfm_name</key>
+			<string>InfoItemTwo</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>ComputerName</string>
+				<string>MacOSVersion</string>
+				<string>Network</string>
+				<string>Password</string>
+				<string>Storage</string>
+				<string>Uptime</string>
+			</array>
+			<key>pfm_range_list_titles</key>
+			<array>
+				<string>Computer Name</string>
+				<string>macOS Version</string>
+				<string>Network</string>
+				<string>Password</string>
+				<string>Storage</string>
+				<string>Uptime</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Info Item 2</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Path to the logo shown in the top right corner when the app opens. Scales to 48 points maximum height.</string>
+			<key>pfm_name</key>
+			<string>Logo</string>
+			<key>pfm_note</key>
+			<string>Some preference keys like the icon and status bar icon point to a file location. Due to the sandboxed characteristic of the app, not all file locations are allowed. We suggest putting the files in a folder within Application Support such as /Library/Application Support/Your Company/ where the app can read the contents. Other supported file locations can be found in Apple's documentation about App Sandbox: https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AppSandboxInDepth/AppSandboxInDepth.html#/apple_ref/doc/uid/TP40011183-CH3-SW17</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>ex. /Library/Application Support/Your Company/LightModeLogo.png</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Path to the logo shown in the top right corner when the app opens for Dark Mode. Scales to 48 points maximum height.</string>
+			<key>pfm_name</key>
+			<string>LogoDarkMode</string>
+			<key>pfm_note</key>
+			<string>Some preference keys like the icon and status bar icon point to a file location. Due to the sandboxed characteristic of the app, not all file locations are allowed. We suggest putting the files in a folder within Application Support such as /Library/Application Support/Your Company/ where the app can read the contents. Other supported file locations can be found in Apple's documentation about App Sandbox: https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AppSandboxInDepth/AppSandboxInDepth.html#/apple_ref/doc/uid/TP40011183-CH3-SW17</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>ex. /Library/Application Support/Your Company/DarkModeLogo.png</string>
 		</dict>
 		<dict>
 			<key>pfm_name</key>
@@ -207,280 +482,6 @@ A profile can consist of payloads with different version numbers. For example, c
 		</dict>
 		<dict>
 			<key>pfm_default</key>
-			<string>Support</string>
-			<key>pfm_description</key>
-			<string>Text shown in the top left corner when the app opens.</string>
-			<key>pfm_name</key>
-			<string>Title</string>
-			<key>pfm_type</key>
-			<string>string</string>
-			<key>pfm_value_placeholder</key>
-			<string>"Your Company Name", "IT Helpdesk" etc.</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Path to the logo shown in the top right corner when the app opens. Scales to 48 points maximum height.</string>
-			<key>pfm_name</key>
-			<string>Logo</string>
-			<key>pfm_note</key>
-			<string>Some preference keys like the icon and status bar icon point to a file location. Due to the sandboxed characteristic of the app, not all file locations are allowed. We suggest putting the files in a folder within Application Support such as /Library/Application Support/Your Company/ where the app can read the contents. Other supported file locations can be found in Apple's documentation about App Sandbox: https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AppSandboxInDepth/AppSandboxInDepth.html#/apple_ref/doc/uid/TP40011183-CH3-SW17</string>
-			<key>pfm_type</key>
-			<string>string</string>
-			<key>pfm_value_placeholder</key>
-			<string>ex. /Library/Application Support/Your Company/LightModeLogo.png</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Path to the logo shown in the top right corner when the app opens for Dark Mode. Scales to 48 points maximum height.</string>
-			<key>pfm_name</key>
-			<string>LogoDarkMode</string>
-			<key>pfm_note</key>
-			<string>Some preference keys like the icon and status bar icon point to a file location. Due to the sandboxed characteristic of the app, not all file locations are allowed. We suggest putting the files in a folder within Application Support such as /Library/Application Support/Your Company/ where the app can read the contents. Other supported file locations can be found in Apple's documentation about App Sandbox: https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AppSandboxInDepth/AppSandboxInDepth.html#/apple_ref/doc/uid/TP40011183-CH3-SW17</string>
-			<key>pfm_type</key>
-			<string>string</string>
-			<key>pfm_value_placeholder</key>
-			<string>ex. /Library/Application Support/Your Company/DarkModeLogo.png</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Path to the status bar icon shown in the menu bar. Recommended: PNG, 16x16 points</string>
-			<key>pfm_name</key>
-			<string>StatusBarIcon</string>
-			<key>pfm_note</key>
-			<string>Some preference keys like the icon and status bar icon point to a file location. Due to the sandboxed characteristic of the app, not all file locations are allowed. We suggest putting the files in a folder within Application Support such as /Library/Application Support/Your Company/ where the app can read the contents. Other supported file locations can be found in Apple's documentation about App Sandbox: https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AppSandboxInDepth/AppSandboxInDepth.html#/apple_ref/doc/uid/TP40011183-CH3-SW17</string>
-			<key>pfm_title</key>
-			<string>Status Bar Icon</string>
-			<key>pfm_type</key>
-			<string>string</string>
-			<key>pfm_value_placeholder</key>
-			<string>ex. /Library/Application Support/Your Company/menubaricon.png</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Custom status bar icon using an SF Symbol. Ignored when StatusBarIcon is also set.</string>
-			<key>pfm_name</key>
-			<string>StatusBarIconSFSymbol</string>
-			<key>pfm_note</key>
-			<string>For more info on how to use SF Symbols, checkout https://github.com/root3nl/SupportApp/#how-to-use-sf-symbols</string>
-			<key>pfm_title</key>
-			<string>Status Bar SF Symbol Icon</string>
-			<key>pfm_type</key>
-			<string>string</string>
-			<key>pfm_value_placeholder</key>
-			<string>lifepreserver</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<false/>
-			<key>pfm_description</key>
-			<string>Shows a small notification badge in the Status Bar icon when there is an Apple Software Update available.</string>
-			<key>pfm_name</key>
-			<string>StatusBarIconNotifierEnabled</string>
-			<key>pfm_title</key>
-			<string>Enable Status Bar Software Update Notifier</string>
-			<key>pfm_type</key>
-			<string>boolean</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Custom color in HEX for all symbols. Leave empty to use macOS Accent Color.</string>
-			<key>pfm_name</key>
-			<string>CustomColor</string>
-			<key>pfm_note</key>
-			<string>Root3 recommends to not to use a very light color as text may become hard to read.</string>
-			<key>pfm_title</key>
-			<string>macOS Accent Color</string>
-			<key>pfm_type</key>
-			<string>string</string>
-			<key>pfm_value_placeholder</key>
-			<string>#8cc63f</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Custom color in HEX for all symbols in Dark Mode. Leave empty to use macOS Accent Color or CustomColor if specified.</string>
-			<key>pfm_name</key>
-			<string>CustomColorDarkMode</string>
-			<key>pfm_note</key>
-			<string>Root3 recommends to not to use a very dark color as text may become hard to read.</string>
-			<key>pfm_title</key>
-			<string>macOS Dark Mode Accent Color</string>
-			<key>pfm_type</key>
-			<string>string</string>
-			<key>pfm_value_placeholder</key>
-			<string>#8cc63f</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<false/>
-			<key>pfm_description</key>
-			<string>Hides the first row of configurable items.</string>
-			<key>pfm_name</key>
-			<string>HideFirstRow</string>
-			<key>pfm_title</key>
-			<string>Hide First Row</string>
-			<key>pfm_type</key>
-			<string>boolean</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<false/>
-			<key>pfm_description</key>
-			<string>Hides the second row of configurable items.</string>
-			<key>pfm_name</key>
-			<string>HideSecondRow</string>
-			<key>pfm_title</key>
-			<string>Hide Second Row</string>
-			<key>pfm_type</key>
-			<string>boolean</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>Please contact IT</string>
-			<key>pfm_description</key>
-			<string>Shown when clicking an action that results in an error.</string>
-			<key>pfm_name</key>
-			<string>ErrorMessage</string>
-			<key>pfm_title</key>
-			<string>Error Message</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>ComputerName</string>
-			<key>pfm_description</key>
-			<string>Info item shown in the upper left corner.</string>
-			<key>pfm_name</key>
-			<string>InfoItemOne</string>
-			<key>pfm_range_list</key>
-			<array>
-				<string>ComputerName</string>
-				<string>MacOSVersion</string>
-				<string>Network</string>
-				<string>Password</string>
-				<string>Storage</string>
-				<string>Uptime</string>
-			</array>
-			<key>pfm_range_list_titles</key>
-			<array>
-				<string>Computer Name</string>
-				<string>macOS Version</string>
-				<string>Network</string>
-				<string>Password</string>
-				<string>Storage</string>
-				<string>Uptime</string>
-			</array>
-			<key>pfm_title</key>
-			<string>Info Item 1</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>MacOSVersion</string>
-			<key>pfm_description</key>
-			<string>Info item shown in the upper right corner.</string>
-			<key>pfm_name</key>
-			<string>InfoItemTwo</string>
-			<key>pfm_range_list</key>
-			<array>
-				<string>ComputerName</string>
-				<string>MacOSVersion</string>
-				<string>Network</string>
-				<string>Password</string>
-				<string>Storage</string>
-				<string>Uptime</string>
-			</array>
-			<key>pfm_range_list_titles</key>
-			<array>
-				<string>Computer Name</string>
-				<string>macOS Version</string>
-				<string>Network</string>
-				<string>Password</string>
-				<string>Storage</string>
-				<string>Uptime</string>
-			</array>
-			<key>pfm_title</key>
-			<string>Info Item 2</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>Uptime</string>
-			<key>pfm_description</key>
-			<string>Info item shown in the second row left.</string>
-			<key>pfm_name</key>
-			<string>InfoItemThree</string>
-			<key>pfm_range_list</key>
-			<array>
-				<string>ComputerName</string>
-				<string>MacOSVersion</string>
-				<string>Network</string>
-				<string>Password</string>
-				<string>Storage</string>
-				<string>Uptime</string>
-			</array>
-			<key>pfm_range_list_titles</key>
-			<array>
-				<string>Computer Name</string>
-				<string>macOS Version</string>
-				<string>Network</string>
-				<string>Password</string>
-				<string>Storage</string>
-				<string>Uptime</string>
-			</array>
-			<key>pfm_title</key>
-			<string>Info Item 3</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>Storage</string>
-			<key>pfm_description</key>
-			<string>Info item shown in the second row right.</string>
-			<key>pfm_name</key>
-			<string>InfoItemFour</string>
-			<key>pfm_range_list</key>
-			<array>
-				<string>ComputerName</string>
-				<string>MacOSVersion</string>
-				<string>Network</string>
-				<string>Password</string>
-				<string>Storage</string>
-				<string>Uptime</string>
-			</array>
-			<key>pfm_range_list_titles</key>
-			<array>
-				<string>Computer Name</string>
-				<string>macOS Version</string>
-				<string>Network</string>
-				<string>Password</string>
-				<string>Storage</string>
-				<string>Uptime</string>
-			</array>
-			<key>pfm_title</key>
-			<string>Info Item 4</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<integer>0</integer>
-			<key>pfm_description</key>
-			<string>Info item shown in the second row right.</string>
-			<key>pfm_name</key>
-			<string>UptimeDaysLimit</string>
-			<key>pfm_title</key>
-			<string>Computer Uptime Limit</string>
-			<key>pfm_type</key>
-			<string>integer</string>
-			<key>pfm_value_unit</key>
-			<string>days</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
 			<integer>0</integer>
 			<key>pfm_description</key>
 			<string>Days of uptime after which a notification badge is shown, disabled by default.</string>
@@ -509,221 +510,100 @@ A profile can consist of payloads with different version numbers. For example, c
 		</dict>
 		<dict>
 			<key>pfm_default</key>
-			<integer>0</integer>
+			<string>SupportApp by Root3 settings</string>
 			<key>pfm_description</key>
-			<string>Percentage of storage used after which a notification badge is shown, disabled by default.</string>
+			<string>Description of the payload.</string>
+			<key>pfm_description_reference</key>
+			<string>Optional. A human-readable description of this payload. This description is shown on the Detail screen.</string>
 			<key>pfm_name</key>
-			<string>StorageLimit</string>
+			<string>PayloadDescription</string>
 			<key>pfm_title</key>
-			<string>Storage Limit</string>
+			<string>Payload Description</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>SupportApp by Root3</string>
+			<key>pfm_description</key>
+			<string>Name of the payload.</string>
+			<key>pfm_description_reference</key>
+			<string>A human-readable name for the profile payload. This name is displayed on the Detail screen. It does not have to be unique.</string>
+			<key>pfm_name</key>
+			<string>PayloadDisplayName</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Display Name</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>nl.root3.support</string>
+			<key>pfm_description</key>
+			<string>A unique identifier for the payload, dot-delimited.  Usually root PayloadIdentifier+subidentifier</string>
+			<key>pfm_description_reference</key>
+			<string>A reverse-DNS-style identifier for the specific payload. It is usually the same identifier as the root-level PayloadIdentifier value with an additional component appended.</string>
+			<key>pfm_name</key>
+			<string>PayloadIdentifier</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Identifier</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>nl.root3.support</string>
+			<key>pfm_description</key>
+			<string>The type of the payload, a reverse dns string.</string>
+			<key>pfm_description_reference</key>
+			<string>The payload type.</string>
+			<key>pfm_name</key>
+			<string>PayloadType</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string></string>
+			<key>pfm_description</key>
+			<string>Unique identifier for the payload (format 01234567-89AB-CDEF-0123-456789ABCDEF)</string>
+			<key>pfm_description_reference</key>
+			<string>A globally unique identifier for the payload. The actual content is unimportant, but it must be globally unique. In macOS, you can use uuidgen to generate reasonable UUIDs.</string>
+			<key>pfm_format</key>
+			<string>^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$</string>
+			<key>pfm_name</key>
+			<string>PayloadUUID</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload UUID</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<integer>1</integer>
+			<key>pfm_description</key>
+			<string>The version of the whole configuration profile.</string>
+			<key>pfm_description_reference</key>
+			<string>The version number of the individual payload.
+A profile can consist of payloads with different version numbers. For example, changes to the VPN software in iOS might introduce a new payload version to support additional features, but Mail payload versions would not necessarily change in the same release.</string>
+			<key>pfm_name</key>
+			<string>PayloadVersion</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Version</string>
 			<key>pfm_type</key>
 			<string>integer</string>
-			<key>pfm_value_unit</key>
-			<string>%</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>Remote Support</string>
-			<key>pfm_description</key>
-			<string>The text shown in the button label.</string>
-			<key>pfm_name</key>
-			<string>FirstRowTitleLeft</string>
-			<key>pfm_title</key>
-			<string>First Row Left Title</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.</string>
-			<key>pfm_name</key>
-			<string>FirstRowSubtitleLeft</string>
-			<key>pfm_title</key>
-			<string>First Row Left Subtitle</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.</string>
-			<key>pfm_name</key>
-			<string>FirstRowTypeLeft</string>
-			<key>pfm_range_list</key>
-			<array>
-				<string>App</string>
-				<string>Command</string>
-				<string>URL</string>
-			</array>
-			<key>pfm_title</key>
-			<string>First Row Left Link Type</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_conditionals</key>
-			<array>
-				<dict>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_present</key>
-							<true/>
-							<key>pfm_target</key>
-							<string>FirstRowTypeLeft</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_default</key>
-			<string>com.apple.ScreenSharing</string>
-			<key>pfm_description</key>
-			<string>The Bundle Identifier of the App or URL that should be opened, command or script to be run.</string>
-			<key>pfm_name</key>
-			<string>FirstRowLinkLeft</string>
-			<key>pfm_note</key>
-			<string>App: Bundle Identifier of the app
-URL: Link to a webpage or other links that would normaly work like PROTOCOL://URL
-Command: Zsh command or path to a script. Be aware that this will be executed as the user and therefore has its limitations</string>
-			<key>pfm_title</key>
-			<string>First Row Left Link</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>cursorarrow</string>
-			<key>pfm_description</key>
-			<string>The SF Symbol shown in the button.</string>
-			<key>pfm_name</key>
-			<string>FirstRowSymbolLeft</string>
-			<key>pfm_note</key>
-			<string>For more info on how to use SF Symbols, checkout https://github.com/root3nl/SupportApp/#how-to-use-sf-symbols</string>
-			<key>pfm_title</key>
-			<string>First Row Left Symbol</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>Company Store</string>
-			<key>pfm_description</key>
-			<string>The text shown in the button label.</string>
-			<key>pfm_name</key>
-			<string>FirstRowTitleRight</string>
-			<key>pfm_title</key>
-			<string>First Row Right Title</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.</string>
-			<key>pfm_name</key>
-			<string>FirstRowSubtitleRight</string>
-			<key>pfm_title</key>
-			<string>First Row Right Subtitle</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.</string>
-			<key>pfm_name</key>
-			<string>FirstRowTypeRight</string>
-			<key>pfm_range_list</key>
-			<array>
-				<string>App</string>
-				<string>Command</string>
-				<string>URL</string>
-			</array>
-			<key>pfm_title</key>
-			<string>First Row Right Link Type</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_conditionals</key>
-			<array>
-				<dict>
-					<key>pfm_target_conditions</key>
-					<array>
-						<dict>
-							<key>pfm_present</key>
-							<true/>
-							<key>pfm_target</key>
-							<string>FirstRowTypeRight</string>
-						</dict>
-					</array>
-				</dict>
-			</array>
-			<key>pfm_default</key>
-			<string>com.apple.ScreenSharing</string>
-			<key>pfm_description</key>
-			<string>The Bundle Identifier of the App or URL that should be opened, command or script to be run.</string>
-			<key>pfm_name</key>
-			<string>FirstRowLinkRight</string>
-			<key>pfm_note</key>
-			<string>App: Bundle Identifier of the app
-URL: Link to a webpage or other links that would normaly work like PROTOCOL://URL
-Command: Zsh command or path to a script. Be aware that this will be executed as the user and therefore has its limitations</string>
-			<key>pfm_title</key>
-			<string>First Row Right Link</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>cart.fill</string>
-			<key>pfm_description</key>
-			<string>The SF Symbol shown in the button.</string>
-			<key>pfm_name</key>
-			<string>FirstRowSymbolRight</string>
-			<key>pfm_note</key>
-			<string>For more info on how to use SF Symbols, checkout https://github.com/root3nl/SupportApp/#how-to-use-sf-symbols</string>
-			<key>pfm_title</key>
-			<string>First Row Right Symbol</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>Support Ticket</string>
-			<key>pfm_description</key>
-			<string>The text shown in the button label.</string>
-			<key>pfm_name</key>
-			<string>SecondRowTitleLeft</string>
-			<key>pfm_title</key>
-			<string>Second Row Left Title</string>
-			<key>pfm_type</key>
-			<string>string</string>
-			<key>pfm_value_placeholder</key>
-			<string>Create ticket</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.</string>
-			<key>pfm_name</key>
-			<string>SecondRowSubtitleLeft</string>
-			<key>pfm_title</key>
-			<string>Second Row Left Subtitle</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.</string>
-			<key>pfm_name</key>
-			<string>SecondRowTypeLeft</string>
-			<key>pfm_range_list</key>
-			<array>
-				<string>App</string>
-				<string>Command</string>
-				<string>URL</string>
-			</array>
-			<key>pfm_title</key>
-			<string>Second Row Left Link Type</string>
-			<key>pfm_type</key>
-			<string>string</string>
 		</dict>
 		<dict>
 			<key>pfm_conditionals</key>
@@ -752,58 +632,6 @@ URL: Link to a webpage or other links that would normaly work like PROTOCOL://UR
 Command: Zsh command or path to a script. Be aware that this will be executed as the user and therefore has its limitations</string>
 			<key>pfm_title</key>
 			<string>Second Row Left Link</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>ticket</string>
-			<key>pfm_description</key>
-			<string>The SF Symbol shown in the button.</string>
-			<key>pfm_name</key>
-			<string>SecondRowSymbolLeft</string>
-			<key>pfm_note</key>
-			<string>For more info on how to use SF Symbols, checkout https://github.com/root3nl/SupportApp/#how-to-use-sf-symbols</string>
-			<key>pfm_title</key>
-			<string>Second Row Left Symbol</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>Email</string>
-			<key>pfm_description</key>
-			<string>The text shown in the button label.</string>
-			<key>pfm_name</key>
-			<string>SecondRowTitleMiddle</string>
-			<key>pfm_title</key>
-			<string>Second Row Middle Title</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.</string>
-			<key>pfm_name</key>
-			<string>SecondRowSubtitleMiddle</string>
-			<key>pfm_title</key>
-			<string>Second Row Middle Subtitle</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.</string>
-			<key>pfm_name</key>
-			<string>SecondRowTypeMiddle</string>
-			<key>pfm_range_list</key>
-			<array>
-				<string>App</string>
-				<string>Command</string>
-				<string>URL</string>
-			</array>
-			<key>pfm_title</key>
-			<string>Second Row Middle Link Type</string>
 			<key>pfm_type</key>
 			<string>string</string>
 		</dict>
@@ -838,58 +666,6 @@ Command: Zsh command or path to a script. Be aware that this will be executed as
 			<string>string</string>
 		</dict>
 		<dict>
-			<key>pfm_default</key>
-			<string>envelope</string>
-			<key>pfm_description</key>
-			<string>The SF Symbol shown in the button.</string>
-			<key>pfm_name</key>
-			<string>SecondRowSymbolMiddle</string>
-			<key>pfm_note</key>
-			<string>For more info on how to use SF Symbols, checkout https://github.com/root3nl/SupportApp/#how-to-use-sf-symbols</string>
-			<key>pfm_title</key>
-			<string>Second Row Middle Symbol</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_default</key>
-			<string>Phone</string>
-			<key>pfm_description</key>
-			<string>The text shown in the button label.</string>
-			<key>pfm_name</key>
-			<string>SecondRowTitleRight</string>
-			<key>pfm_title</key>
-			<string>Second Row Right Title</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.</string>
-			<key>pfm_name</key>
-			<string>SecondRowSubtitleRight</string>
-			<key>pfm_title</key>
-			<string>Second Row Right Subtitle</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
-			<key>pfm_description</key>
-			<string>Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.</string>
-			<key>pfm_name</key>
-			<string>SecondRowTypeRight</string>
-			<key>pfm_range_list</key>
-			<array>
-				<string>App</string>
-				<string>Command</string>
-				<string>URL</string>
-			</array>
-			<key>pfm_title</key>
-			<string>Second Row Right Link Type</string>
-			<key>pfm_type</key>
-			<string>string</string>
-		</dict>
-		<dict>
 			<key>pfm_conditionals</key>
 			<array>
 				<dict>
@@ -920,6 +696,64 @@ Command: Zsh command or path to a script. Be aware that this will be executed as
 			<string>string</string>
 		</dict>
 		<dict>
+			<key>pfm_description</key>
+			<string>Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.</string>
+			<key>pfm_name</key>
+			<string>SecondRowSubtitleLeft</string>
+			<key>pfm_title</key>
+			<string>Second Row Left Subtitle</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.</string>
+			<key>pfm_name</key>
+			<string>SecondRowSubtitleMiddle</string>
+			<key>pfm_title</key>
+			<string>Second Row Middle Subtitle</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Subtitle text will appear under title when the user hovers over the button. Ignored if left empty.</string>
+			<key>pfm_name</key>
+			<string>SecondRowSubtitleRight</string>
+			<key>pfm_title</key>
+			<string>Second Row Right Subtitle</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>ticket</string>
+			<key>pfm_description</key>
+			<string>The SF Symbol shown in the button.</string>
+			<key>pfm_name</key>
+			<string>SecondRowSymbolLeft</string>
+			<key>pfm_note</key>
+			<string>For more info on how to use SF Symbols, checkout https://github.com/root3nl/SupportApp/#how-to-use-sf-symbols</string>
+			<key>pfm_title</key>
+			<string>Second Row Left Symbol</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>envelope</string>
+			<key>pfm_description</key>
+			<string>The SF Symbol shown in the button.</string>
+			<key>pfm_name</key>
+			<string>SecondRowSymbolMiddle</string>
+			<key>pfm_note</key>
+			<string>For more info on how to use SF Symbols, checkout https://github.com/root3nl/SupportApp/#how-to-use-sf-symbols</string>
+			<key>pfm_title</key>
+			<string>Second Row Middle Symbol</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
 			<key>pfm_default</key>
 			<string>phone</string>
 			<key>pfm_description</key>
@@ -932,6 +766,172 @@ Command: Zsh command or path to a script. Be aware that this will be executed as
 			<string>Second Row Right Symbol</string>
 			<key>pfm_type</key>
 			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Support Ticket</string>
+			<key>pfm_description</key>
+			<string>The text shown in the button label.</string>
+			<key>pfm_name</key>
+			<string>SecondRowTitleLeft</string>
+			<key>pfm_title</key>
+			<string>Second Row Left Title</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>Create ticket</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Email</string>
+			<key>pfm_description</key>
+			<string>The text shown in the button label.</string>
+			<key>pfm_name</key>
+			<string>SecondRowTitleMiddle</string>
+			<key>pfm_title</key>
+			<string>Second Row Middle Title</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Phone</string>
+			<key>pfm_description</key>
+			<string>The text shown in the button label.</string>
+			<key>pfm_name</key>
+			<string>SecondRowTitleRight</string>
+			<key>pfm_title</key>
+			<string>Second Row Right Title</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.</string>
+			<key>pfm_name</key>
+			<string>SecondRowTypeLeft</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>App</string>
+				<string>Command</string>
+				<string>URL</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Second Row Left Link Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.</string>
+			<key>pfm_name</key>
+			<string>SecondRowTypeMiddle</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>App</string>
+				<string>Command</string>
+				<string>URL</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Second Row Middle Link Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Type of link the item should open. Can be anything like screen sharing tools, company stores, file servers or core applications in your organization.</string>
+			<key>pfm_name</key>
+			<string>SecondRowTypeRight</string>
+			<key>pfm_range_list</key>
+			<array>
+				<string>App</string>
+				<string>Command</string>
+				<string>URL</string>
+			</array>
+			<key>pfm_title</key>
+			<string>Second Row Right Link Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Path to the status bar icon shown in the menu bar. Recommended: PNG, 16x16 points</string>
+			<key>pfm_name</key>
+			<string>StatusBarIcon</string>
+			<key>pfm_note</key>
+			<string>Some preference keys like the icon and status bar icon point to a file location. Due to the sandboxed characteristic of the app, not all file locations are allowed. We suggest putting the files in a folder within Application Support such as /Library/Application Support/Your Company/ where the app can read the contents. Other supported file locations can be found in Apple's documentation about App Sandbox: https://developer.apple.com/library/archive/documentation/Security/Conceptual/AppSandboxDesignGuide/AppSandboxInDepth/AppSandboxInDepth.html#/apple_ref/doc/uid/TP40011183-CH3-SW17</string>
+			<key>pfm_title</key>
+			<string>Status Bar Icon</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>ex. /Library/Application Support/Your Company/menubaricon.png</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<false/>
+			<key>pfm_description</key>
+			<string>Shows a small notification badge in the Status Bar icon when there is an Apple Software Update available.</string>
+			<key>pfm_name</key>
+			<string>StatusBarIconNotifierEnabled</string>
+			<key>pfm_title</key>
+			<string>Enable Status Bar Software Update Notifier</string>
+			<key>pfm_type</key>
+			<string>boolean</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>Custom status bar icon using an SF Symbol. Ignored when StatusBarIcon is also set.</string>
+			<key>pfm_name</key>
+			<string>StatusBarIconSFSymbol</string>
+			<key>pfm_note</key>
+			<string>For more info on how to use SF Symbols, checkout https://github.com/root3nl/SupportApp/#how-to-use-sf-symbols</string>
+			<key>pfm_title</key>
+			<string>Status Bar SF Symbol Icon</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>lifepreserver</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<integer>0</integer>
+			<key>pfm_description</key>
+			<string>Percentage of storage used after which a notification badge is shown, disabled by default.</string>
+			<key>pfm_name</key>
+			<string>StorageLimit</string>
+			<key>pfm_title</key>
+			<string>Storage Limit</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+			<key>pfm_value_unit</key>
+			<string>%</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Support</string>
+			<key>pfm_description</key>
+			<string>Text shown in the top left corner when the app opens.</string>
+			<key>pfm_name</key>
+			<string>Title</string>
+			<key>pfm_type</key>
+			<string>string</string>
+			<key>pfm_value_placeholder</key>
+			<string>"Your Company Name", "IT Helpdesk" etc.</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<integer>0</integer>
+			<key>pfm_description</key>
+			<string>Info item shown in the second row right.</string>
+			<key>pfm_name</key>
+			<string>UptimeDaysLimit</string>
+			<key>pfm_title</key>
+			<string>Computer Uptime Limit</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+			<key>pfm_value_unit</key>
+			<string>days</string>
 		</dict>
 	</array>
 	<key>pfm_targets</key>
