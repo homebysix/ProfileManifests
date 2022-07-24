@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>pfm_description</key>
-	<string>Education Configuration settings</string>
+	<string>This payload is used to configure Classroom students, Classroom instructors, and the Shared iPad login screen. These do not necessarily require the same set of keys to be present in their payloads, so make sure to include all keys that are required for the education product you are configuring.</string>
 	<key>pfm_description_reference</key>
 	<string>The Education Configuration Payload is designated by specifying com.apple.education as the PayloadType value. It can contain only one payload.
 The Education Configuration Payload defines the users, groups, and departments within an educational organization. It is supported on iOS 9.3 and later. On iOS, it must be supervised and sent over the device channel.
@@ -19,7 +19,7 @@ It is supported on macOS 10.14 and later. On macOS, it must be sent over the use
 	<key>pfm_ios_min</key>
 	<string>9.3</string>
 	<key>pfm_last_modified</key>
-	<date>2022-03-14T03:32:52Z</date>
+	<date>2022-07-24T17:19:59Z</date>
 	<key>pfm_macos_min</key>
 	<string>10.14</string>
 	<key>pfm_platforms</key>
@@ -31,7 +31,8 @@ It is supported on macOS 10.14 and later. On macOS, it must be sent over the use
 	<array>
 		<dict>
 			<key>pfm_description</key>
-			<string>Shared: An array of dictionaries that define departments that are shown in the iOS login window.</string>
+			<string>For shared iPad profiles: The array of dictionaries that defines which departments  are shown in the Shared iPad login screen.
+If present, this key is used to configure both Classroom and the Shared iPad login screen.</string>
 			<key>pfm_description_reference</key>
 			<string>Optional. Shared: An array of dictionaries that define departments that are shown in the iOS login window.</string>
 			<key>pfm_name</key>
@@ -88,7 +89,7 @@ It is supported on macOS 10.14 and later. On macOS, it must be sent over the use
 		</dict>
 		<dict>
 			<key>pfm_description</key>
-			<string>Leader: An array of dictionaries that define the device groups to which the leader can assign devices. This key is not included in member payloads.</string>
+			<string>For leader/teacher profiles: The array of dictionaries that defines which device groups the leader can assign devices to. This key is not included in member payloads.</string>
 			<key>pfm_description_reference</key>
 			<string>Optional. Leader: An array of dictionaries that define the device groups to which the leader can assign devices. This key is not included in member payloads.</string>
 			<key>pfm_name</key>
@@ -159,9 +160,11 @@ It is supported on macOS 10.14 and later. On macOS, it must be sent over the use
 		</dict>
 		<dict>
 			<key>pfm_description</key>
-			<string>Shared: An array of dictionaries that define groups that the user can select in the login window.
-Leader: An array of dictionaries that define the groups that the user can control.
-Member: An array of dictionaries that define the groups of which the user is a member.</string>
+			<string>For shared iPad profiles: The array of dictionaries that defines which groups the user can select in the login window.
+
+For leader/teacher profiles: The array of dictionaries that defines the groups that the user can control.
+
+For member/student profiles: The array of dictionaries that defines the groups where the user is a member.</string>
 			<key>pfm_description_reference</key>
 			<string>Required. Shared: An array of dictionaries that define groups that the user can select in the login window.
 Leader: An array of dictionaries that define the groups that the user can control.
@@ -306,7 +309,9 @@ Member: An array of dictionaries that define the groups of which the user is a m
 		</dict>
 		<dict>
 			<key>pfm_description</key>
-			<string>List of UUIDs referring to certificate payloads that will be used to authorize leader peer certificate identities. This array must contain all certificates needed to validate the entire chain of trust. Leader certificates must have the common name prefix leader (case insensitive) and have a .cer type.</string>
+			<string>The array of UUIDs referring to certificate payloads within the same profile that are used to authorize leader peer certificate identities. This array must contain all certificates needed to validate the entire chain of trust. Leader certificates must have the common name prefix leader (case insensitive).
+Note: Identity payloads aren't supported.
+This key is required when configuring a student device for Classroom, and is ignored when configuring an instructor device. It does not impact the configuration of the Shared iPad login screen.</string>
 			<key>pfm_description_reference</key>
 			<string>Optional. An array of UUIDs referring to certificate payloads that will be used to authorize leader peer certificate identities. This array must contain all certificates needed to validate the entire chain of trust. Leader certificates must have the common name prefix leader (case insensitive) and have a .cer type.</string>
 			<key>pfm_name</key>
@@ -327,7 +332,9 @@ Member: An array of dictionaries that define the groups of which the user is a m
 		</dict>
 		<dict>
 			<key>pfm_description</key>
-			<string>List of UUIDs referring to certificate payloads that will be used to authorize group member peer certificate identities. This array must contain all certificates needed to validate the entire chain of trust. Member certificates must have the common name prefix member (case insensitive) and have a .cer type.</string>
+			<string>The array of UUIDs referring to certificate payloads within the same profile that are used to authorize group member peer certificate identities. This array must contain all certificates needed to validate the entire chain of trust. Member certificates must have the common name prefix member (case insensitive).
+Note: Identity payloads aren't supported.
+This key is required when configuring an instructor device for Classroom, and is ignored when configuring a student device. It does not impact the configuration of the Shared iPad login screen.</string>
 			<key>pfm_description_reference</key>
 			<string>Optional. An array of UUIDs referring to certificate payloads that will be used to authorize group member peer certificate identities. This array must contain all certificates needed to validate the entire chain of trust. Member certificates must have the common name prefix member (case insensitive) and have a .cer type.</string>
 			<key>pfm_name</key>
@@ -348,7 +355,7 @@ Member: An array of dictionaries that define the groups of which the user is a m
 		</dict>
 		<dict>
 			<key>pfm_description</key>
-			<string>The organization's display name.</string>
+			<string>The organization's display name. This name is shown in the iOS login screen.</string>
 			<key>pfm_description_reference</key>
 			<string>Required. The organization's display name. This name will be shown in the iOS login screen.</string>
 			<key>pfm_name</key>
@@ -362,7 +369,7 @@ Member: An array of dictionaries that define the groups of which the user is a m
 		</dict>
 		<dict>
 			<key>pfm_description</key>
-			<string>All teacher and student devices that need to communicate with one another must have the same OrganizationUUID, particularly if they originated from different Device Enrollment Programs.</string>
+			<string>The organization's UUID identifier. This identifier can be any valid UUID. All teacher and student devices that need to communicate with one another must have the same organization UUID, particularly if they originated from different Device Enrollment Programs.</string>
 			<key>pfm_description_reference</key>
 			<string>Required. The organization's UUID identifier. This can be any valid UUID. All teacher and student devices that need to communicate with one another must have the same OrganizationUUID, particularly if they originated from different Device Enrollment Programs.</string>
 			<key>pfm_name</key>
@@ -376,7 +383,8 @@ Member: An array of dictionaries that define the groups of which the user is a m
 		</dict>
 		<dict>
 			<key>pfm_description</key>
-			<string>Used to perform client authentication between devices.</string>
+			<string>The UUID of an identity certificate payload within the same profile to use for  performing client authentication with other devices.
+This key is required to configure Classroom. It does not impact the configuration of the Shared iPad login screen.</string>
 			<key>pfm_description_reference</key>
 			<string>Required. The UUID of an identity certificate payload that will be used to perform client authentication with other devices.</string>
 			<key>pfm_format</key>
@@ -501,7 +509,8 @@ A profile can consist of payloads with different version numbers. For example, c
 		</dict>
 		<dict>
 			<key>pfm_description</key>
-			<string>The UUID of an identity certificate payload that will be used to perform client authentication when fetching additional resources, such as, student images. If not specified the MDM client identity will be used.</string>
+			<string>The UUID of an identity certificate payload within the same profile that is used to perform client authentication when fetching additional resources, such as student images. If not specified, the MDM client identity is used.
+If present, this key is used to configure both Classroom and the Shared iPad login screen.</string>
 			<key>pfm_description_reference</key>
 			<string>Optional. The UUID of an identity certificate payload that will be used to perform client authentication when fetching additional resources, such as, student images. If not specified the MDM client identity will be used.</string>
 			<key>pfm_name</key>
@@ -515,11 +524,19 @@ A profile can consist of payloads with different version numbers. For example, c
 			<key>pfm_default</key>
 			<false/>
 			<key>pfm_description</key>
-			<string>To allow students enrolled in managed classes to modify teacher permission for screen observation, set to 'true'.</string>
+			<string>If 'true', allows students enrolled in managed classes to modify their teacher's permissions for screen observation on their device.</string>
 			<key>pfm_description_reference</key>
 			<string> Optional. If set to true, students enrolled in managed classes can modify their teacher's permissions for screen observation on this device. Defaults to false.</string>
+			<key>pfm_ios_min</key>
+			<string>10.3</string>
 			<key>pfm_name</key>
 			<string>ScreenObservationPermissionModificationAllowed</string>
+			<key>pfm_platforms</key>
+			<array>
+				<string>iOS</string>
+			</array>
+			<key>pfm_targets</key>
+			<array/>
 			<key>pfm_title</key>
 			<string>Allow students to modify screen observation permissions</string>
 			<key>pfm_type</key>
@@ -527,7 +544,8 @@ A profile can consist of payloads with different version numbers. For example, c
 		</dict>
 		<dict>
 			<key>pfm_description</key>
-			<string>A unique string that identifies the user of this device within the organization.</string>
+			<string>The unique string that identifies the user of this device within the organization.
+If this payload is intended to configure the Shared iPad login screen, this value must not be set.</string>
 			<key>pfm_description_reference</key>
 			<string>Optional. A unique string that identifies the user of this device within the organization.</string>
 			<key>pfm_name</key>
@@ -541,10 +559,11 @@ A profile can consist of payloads with different version numbers. For example, c
 		</dict>
 		<dict>
 			<key>pfm_description</key>
-			<string>Shared: An array of dictionaries that define the users that are shown in the iOS login window.
-Leader: An array of dictionaries that define users that are members of the leaderʼs groups.
-Member: An array of a dictionaries that must contain the definition of the user specified in the UserIdentifier key.
-With one-to-one member devices, this key should include only the device user and the leader but not other class members.</string>
+			<string>For shared iPad profiles: The array of dictionaries that define the users that are shown in the iOS login window.
+
+For leader/teacher profiles: The array of dictionaries that define users that are members of the teacher's groups.
+
+For member/student profiles: The array of dictionaries that must contain the definition of the user specified in the 'UserIdentifier' key. With one-to-one member devices, this key should include only the device user and the teacher but not other class members.</string>
 			<key>pfm_description_reference</key>
 			<string>Required. Shared: An array of dictionaries that define the users that are shown in the iOS login window.
 Leader: An array of dictionaries that define users that are members of the leaderʼs groups.
@@ -681,17 +700,110 @@ With one-to-one member devices, this key should include only the device user and
 			<key>pfm_type</key>
 			<string>array</string>
 		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>This payload is used to configure Classroom students, Classroom instructors, and the Shared iPad login screen. These do not necessarily require the same set of keys to be present in their payloads, so make sure to include all keys that are required for the education product you are configuring.</string>
+			<key>pfm_description</key>
+			<string>Description of the payload</string>
+			<key>pfm_name</key>
+			<string>PayloadDescription</string>
+			<key>pfm_title</key>
+			<string>Payload Description</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>Education Configuration</string>
+			<key>pfm_description</key>
+			<string>Name of the payload</string>
+			<key>pfm_name</key>
+			<string>PayloadDisplayName</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Display Name</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>com.apple.education</string>
+			<key>pfm_description</key>
+			<string>A unique identifier for the payload, dot-delimited.  Usually root PayloadIdentifier+subidentifier</string>
+			<key>pfm_name</key>
+			<string>PayloadIdentifier</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Identifier</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string>com.apple.education</string>
+			<key>pfm_description</key>
+			<string>The type of the payload, a reverse dns string</string>
+			<key>pfm_name</key>
+			<string>PayloadType</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Type</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<string></string>
+			<key>pfm_description</key>
+			<string>Unique identifier for the payload (format 01234567-89AB-CDEF-0123-456789ABCDEF)</string>
+			<key>pfm_format</key>
+			<string>^[0-9A-Za-z]{8}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{4}-[0-9A-Za-z]{12}$</string>
+			<key>pfm_name</key>
+			<string>PayloadUUID</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload UUID</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
+		<dict>
+			<key>pfm_default</key>
+			<integer>1</integer>
+			<key>pfm_description</key>
+			<string>The version of the whole configuration profile</string>
+			<key>pfm_name</key>
+			<string>PayloadVersion</string>
+			<key>pfm_require</key>
+			<string>always</string>
+			<key>pfm_title</key>
+			<string>Payload Version</string>
+			<key>pfm_type</key>
+			<string>integer</string>
+		</dict>
+		<dict>
+			<key>pfm_description</key>
+			<string>This value describes the issuing organization of the profile, as displayed to the user</string>
+			<key>pfm_name</key>
+			<string>PayloadOrganization</string>
+			<key>pfm_title</key>
+			<string>Payload Organization</string>
+			<key>pfm_type</key>
+			<string>string</string>
+		</dict>
 	</array>
 	<key>pfm_targets</key>
 	<array>
 		<string>user</string>
-		<string>system</string>
 	</array>
 	<key>pfm_title</key>
-	<string>Education</string>
+	<string>Education Configuration</string>
 	<key>pfm_unique</key>
 	<true/>
 	<key>pfm_version</key>
-	<integer>5</integer>
+	<integer>6</integer>
 </dict>
 </plist>
